@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phiếu yêu cầu sản xuất phụ kiện</title>
+    <link rel="stylesheet" href="./public/style.css">
+    <script src="./public/script.js" defer></script>
+    <script src="./public/export-pdf.js" defer></script>
+    <script src="./public/export-excel.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.2.0/exceljs.min.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <img src="https://i.imgur.com/vfwvNd4.jpg" alt="Mô tả hình ảnh">
+        <h2 style="text-align: center">PHIẾU YÊU CẦU SẢN XUẤT PHỤ KIỆN NHỰA</h2>
+        <p style="text-align: center">(Lệnh sản xuất số: <span id="maLenhsanxuat">Đang tải...</span>)</p>
+        <p style="text-align: right"><i>Xưởng <span id="xuongSanXuat">Đang tải...</span>,
+                Ngày <span id="ngayXuat">Đang tải...</span>
+                <span id="thangXuat">Đang tải...</span>
+                <span id="namXuat">Đang tải...</span></i></p>
+        <table class="info-table">
+            <tbody>
+                <p><b>Mã khuôn: <span id="maKhuon">Đang tải...</span></b></p>
+                <tr>
+                    <th class="infocol-1-H">Mã hạt nhựa</th>
+                    <th class="infocol-2-H">Tên hạt nhựa</th>
+                    <th class="infocol-3">Trọng lượng xuất<br>(kg)</th>
+                </tr>
+                <tr id="row1">
+                    <td class="infocol-1"><span id="maHatnhua1_row1">Đang tải...</span></td>
+                    <td class="infocol-2"><span id="tenHatnhua1">Đang tải...</span></td>
+                    <td class="infocol-3"><span id="socanHatnhua1">Đang tải...</span></td>
+                </tr>
+                <tr id="row2">
+                    <td class="infocol-1"><span id="maHatnhua2_row1">Đang tải...</span></td>
+                    <td class="infocol-2"><span id="tenHatnhua2">Đang tải...</span></td>
+                    <td class="infocol-3"><span id="socanHatnhua2">Đang tải...</span></td>
+                </tr>
+                <tr id="row3">
+                    <td class="infocol-1"><span id="maHatnhua3_row1">Đang tải...</span></td>
+                    <td class="infocol-2"><span id="tenHatnhua3">Đang tải...</span></td>
+                    <td class="infocol-3"><span id="socanHatnhua3">Đang tải...</span></td>
+                </tr>
+                <tr id="row4">
+                    <td class="infocol-1"><span id="maHatnhua4_row1">Đang tải...</span></td>
+                    <td class="infocol-2"><span id="tenHatnhua4">Đang tải...</span></td>
+                    <td class="infocol-3"><span id="socanHatnhua4">Đang tải...</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="border-collapse: collapse;">
+            <tbody id="itemTableBody">
+                <!-- Rows will be added dynamically here -->
+            </tbody>
+        </table>
+        <table class="slice-table">
+            <tbody>
+                <p style="margin-top: 30px;"><b>Phân bổ nguyên vật liệu (kg)</b></p>
+                <tr>
+                    <th class="slicecol-1">Mã thành phẩm \ Mã hạt nhựa</th>
+                    <th class="slicecol-2"><span id="maHatnhua1_row2">Đang tải...</span></th>
+                    <th class="slicecol-3"><span id="maHatnhua2_row2">Đang tải...</span></th>
+                    <th class="slicecol-4"><span id="maHatnhua3_row2">Đang tải...</span></th>
+                    <th class="slicecol-5"><span id="maHatnhua4_row2">Đang tải...</span></th>
+                </tr>
+                <tr id="rowSlice1">
+                    <td class="slicecol-1"><span id="maThanhphamPB1">Đang tải...</span></td>
+                    <td class="slicecol-2"><span id="socanHN1_maThanhphamPB1">Đang tải...</span></td>
+                    <td class="slicecol-3"><span id="socanHN2_maThanhphamPB1">Đang tải...</span></td>
+                    <td class="slicecol-4"><span id="socanHN3_maThanhphamPB1">Đang tải...</span></td>
+                    <td class="slicecol-5"><span id="socanHN4_maThanhphamPB1">Đang tải...</span></td>
+                </tr>
+                <tr id="rowSlice2">
+                    <td class="slicecol-1"><span id="maThanhphamPB2">Đang tải...</span></td>
+                    <td class="slicecol-2"><span id="socanHN1_maThanhphamPB2">Đang tải...</span></td>
+                    <td class="slicecol-3"><span id="socanHN2_maThanhphamPB2">Đang tải...</span></td>
+                    <td class="slicecol-4"><span id="socanHN3_maThanhphamPB2">Đang tải...</span></td>
+                    <td class="slicecol-5"><span id="socanHN4_maThanhphamPB2">Đang tải...</span></td>
+                </tr>
+                <tr id="rowSlice3">
+                    <td class="slicecol-1"><span id="maThanhphamPB3">Đang tải...</span></td>
+                    <td class="slicecol-2"><span id="socanHN1_maThanhphamPB3">Đang tải...</span></td>
+                    <td class="slicecol-3"><span id="socanHN2_maThanhphamPB3">Đang tải...</span></td>
+                    <td class="slicecol-4"><span id="socanHN3_maThanhphamPB3">Đang tải...</span></td>
+                    <td class="slicecol-5"><span id="socanHN4_maThanhphamPB3">Đang tải...</span></td>
+                </tr>
+                <tr id="rowSlice4">
+                    <td class="slicecol-1"><span id="maThanhphamPB4">Đang tải...</span></td>
+                    <td class="slicecol-2"><span id="socanHN1_maThanhphamPB4">Đang tải...</span></td>
+                    <td class="slicecol-3"><span id="socanHN2_maThanhphamPB4">Đang tải...</span></td>
+                    <td class="slicecol-4"><span id="socanHN3_maThanhphamPB4">Đang tải...</span></td>
+                    <td class="slicecol-5"><span id="socanHN4_maThanhphamPB4">Đang tải...</span></td>
+                </tr>
+                <tr id="rowSlice5">
+                    <td class="slicecol-1"><span id="maThanhphamPB5">Đang tải...</span></td>
+                    <td class="slicecol-2"><span id="socanHN1_maThanhphamPB5">Đang tải...</span></td>
+                    <td class="slicecol-3"><span id="socanHN2_maThanhphamPB5">Đang tải...</span></td>
+                    <td class="slicecol-4"><span id="socanHN3_maThanhphamPB5">Đang tải...</span></td>
+                    <td class="slicecol-5"><span id="socanHN4_maThanhphamPB5">Đang tải...</span></td>
+                </tr>
+                <tr id="rowSlice6">
+                    <td class="slicecol-1"><span id="maThanhphamPB6">Đang tải...</span></td>
+                    <td class="slicecol-2"><span id="socanHN1_maThanhphamPB6">Đang tải...</span></td>
+                    <td class="slicecol-3"><span id="socanHN2_maThanhphamPB6">Đang tải...</span></td>
+                    <td class="slicecol-4"><span id="socanHN3_maThanhphamPB6">Đang tải...</span></td>
+                    <td class="slicecol-5"><span id="socanHN4_maThanhphamPB6">Đang tải...</span></td>
+                </tr>
+                <tr id="rowSlice7">
+                    <td class="slicecol-1"><span id="maThanhphamPB7">Đang tải...</span></td>
+                    <td class="slicecol-2"><span id="socanHN1_maThanhphamPB7">Đang tải...</span></td>
+                    <td class="slicecol-3"><span id="socanHN2_maThanhphamPB7">Đang tải...</span></td>
+                    <td class="slicecol-4"><span id="socanHN3_maThanhphamPB7">Đang tải...</span></td>
+                    <td class="slicecol-5"><span id="socanHN4_maThanhphamPB7">Đang tải...</span></td>
+                </tr>
+                <tr id="rowSlice8">
+                    <td class="slicecol-1"><span id="maThanhphamPB8">Đang tải...</span></td>
+                    <td class="slicecol-2"><span id="socanHN1_maThanhphamPB8">Đang tải...</span></td>
+                    <td class="slicecol-3"><span id="socanHN2_maThanhphamPB8">Đang tải...</span></td>
+                    <td class="slicecol-4"><span id="socanHN3_maThanhphamPB8">Đang tải...</span></td>
+                    <td class="slicecol-5"><span id="socanHN4_maThanhphamPB8">Đang tải...</span></td>
+                </tr>
+                <tr>
+                    <td class="slicecol-1"><span id="maTaichePB">Đang tải...</span></td>
+                    <td class="slicecol-2"><span id="socanHN1_maTaichePB">Đang tải...</span></td>
+                    <td class="slicecol-3"><span id="socanHN2_maTaichePB">Đang tải...</span></td>
+                    <td class="slicecol-4"><span id="socanHN3_maTaichePB">Đang tải...</span></td>
+                    <td class="slicecol-5"><span id="socanHN4_maTaichePB">Đang tải...</span></td>
+                </tr>
+                <tr>
+                    <td class="slicecol-1"><span id="maPhePB">Đang tải...</span></td>
+                    <td class="slicecol-2"><span id="socanHN1_maPhePB">Đang tải...</span></td>
+                    <td class="slicecol-3"><span id="socanHN2_maPhePB">Đang tải...</span></td>
+                    <td class="slicecol-4"><span id="socanHN3_maPhePB">Đang tải...</span></td>
+                    <td class="slicecol-5"><span id="socanHN4_maPhePB">Đang tải...</span></td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 100%; margin-top: 16px;">
+            <tbody>
+                <tr style="text-align: center">
+                    <td style="width: 33.33%;"><b>Người đề xuất</b><br><i>(ký, ghi rõ họ tên)</i></td>
+                    <td style="width: 33.33%;"><b>Thủ kho</b><br><i>(ký, ghi rõ họ tên)</i></td>
+                    <td style="width: 33.33%;"><b>Người nhập</b><br><i>(ký, ghi rõ họ tên)</i></td>
+                </tr>
+                <tr style="text-align: center">
+                    <td style="width: 33.33%; height: 100px;"></td>
+                    <td style="width: 33.33%; height: 100px;"></td>
+                    <td style="width: 33.33%; height: 100px;"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <button id="export-pdf" class="button-pdf">Tải PDF</button>
+</body>
+
+</html>
