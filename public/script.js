@@ -632,7 +632,7 @@ function displayDetailData(orderItems) {
 
         let tableRows = `
             <p style="white-space: nowrap;"><b>Lần nhập: ${item.lanNhapkho || ''}</b></p>
-            <p style="white-space: nowrap;"><b>Ngày nhập: ${formatDate(item.ngayNhap) || ''}</b></p>
+            <p style="white-space: nowrap;"><b>Ngày nhập: ${item.ngayNhap || ''}</b></p>
             <tr class="bordered-table">
                 <th class="borderedcol-1-H">Mã thành phẩm</th>
                 <th class="borderedcol-2">Tỷ trọng TT<br>(g/cái)</th>
@@ -692,7 +692,7 @@ function displayDetailData(orderItems) {
 function extractDetailDataFromRow(row) {
     return {
         lanNhapkho: row[2],
-        ngayNhap: row[3],
+        ngayNhap: formatDate(row[3]),
         tongTrongluong: row[4],
         maThanhpham1: row[5],
         soluongThanhpham1: row[6],
