@@ -400,6 +400,8 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     socanHN3_maPhePB: row[67] || '', // Cột BP
                     socanHN4_maPhePB: row[68] || '', // Cột BQ
 
+                    tongSocanHatnhua: '', // Dòng tổng số cân hạt nhựa
+
                 };
 
                 // Tìm tên hạt nhựa
@@ -431,6 +433,8 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('maHatnhua4_row2').textContent = orderDetails.maHatnhua4;
                 document.getElementById('tenHatnhua4').textContent = orderDetails.tenHatnhua4; // Thêm phần này
                 document.getElementById('socanHatnhua4').textContent = formatWithCommas(orderDetails.socanHatnhua4);
+
+                document.getElementById('tongSocanHatnhua').textContent = formatWithCommas(orderDetails.socanHatnhua1) + formatWithCommas(orderDetails.socanHatnhua2) + formatWithCommas(orderDetails.socanHatnhua3) + formatWithCommas(orderDetails.socanHatnhua4);
 
                 document.getElementById('maThanhphamPB1').textContent = orderDetails.maThanhphamPB1;
                 document.getElementById('socanHN1_maThanhphamPB1').textContent = formatWithCommas(orderDetails.socanHN1_maThanhphamPB1);
