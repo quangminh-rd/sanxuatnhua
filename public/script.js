@@ -435,10 +435,10 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('socanHatnhua4').textContent = formatWithCommas(orderDetails.socanHatnhua4);
 
                 document.getElementById('tongSocanHatnhua').textContent = formatWithCommas(
-                    parseFloat(orderDetails.socanHatnhua1.replace(/,/g, '') || 0) +
-                    parseFloat(orderDetails.socanHatnhua2.replace(/,/g, '') || 0) +
-                    parseFloat(orderDetails.socanHatnhua3.replace(/,/g, '') || 0) +
-                    parseFloat(orderDetails.socanHatnhua4.replace(/,/g, '') || 0)
+                    parseFloat(orderDetails.socanHatnhua1.replace(/./g, '') || 0) +
+                    parseFloat(orderDetails.socanHatnhua2.replace(/./g, '') || 0) +
+                    parseFloat(orderDetails.socanHatnhua3.replace(/./g, '') || 0) +
+                    parseFloat(orderDetails.socanHatnhua4.replace(/./g, '') || 0)
                 );
 
                 document.getElementById('maThanhphamPB1').textContent = orderDetails.maThanhphamPB1;
