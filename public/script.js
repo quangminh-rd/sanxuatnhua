@@ -617,7 +617,6 @@ function displayDetailData(orderItems) {
     tableBody.innerHTML = ''; // Xóa dữ liệu cũ nếu có
 
     orderItems.forEach(item => {
-        console.log(item);
 
         // Tạo các dòng động với kiểm tra điều kiện
         const rows = [
