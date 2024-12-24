@@ -603,6 +603,12 @@ async function findDetailsInSheet(maLenhsanxuatURI) {
     }
 }
 
+function formatDate(dateString) {
+    if (!dateString) return ''; // Kiểm tra nếu giá trị rỗng
+    const [month, day, year] = dateString.split('/'); // Tách tháng, ngày, năm từ chuỗi
+    return `${day}/${month}/${year}`; // Trả về định dạng DD/MM/YYYY
+}
+
 function displayDetailData(orderItems) {
     const tableBody = document.getElementById('itemTableBody');
     tableBody.innerHTML = ''; // Xóa dữ liệu cũ nếu có
@@ -626,7 +632,7 @@ function displayDetailData(orderItems) {
 
         let tableRows = `
             <p style="white-space: nowrap;"><b>Lần nhập: ${item.lanNhapkho || ''}</b></p>
-            <p style="white-space: nowrap;"><b>Ngày nhập: ${item.ngayNhap || ''}</b></p>
+            <p style="white-space: nowrap;"><b>Ngày nhập: ${formatDate(item.ngayNhap) || ''}</b></p>
             <tr class="bordered-table">
                 <th class="borderedcol-1-H">Mã thành phẩm</th>
                 <th class="borderedcol-2">Tỷ trọng TT<br>(g/cái)</th>
