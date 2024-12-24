@@ -400,7 +400,7 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     socanHN3_maPhePB: row[67] || '', // Cột BP
                     socanHN4_maPhePB: row[68] || '', // Cột BQ
 
-                    tongSocanHatnhua: row[12] + row[14] + row[16] + row[18], // Dòng tổng số cân hạt nhựa
+                    tongSocanHatnhua: parseFloat(row[12] || 0) + parseFloat(row[14] || 0) + parseFloat(row[16] || 0) + parseFloat(row[18] || 0), // Dòng tổng số cân hạt nhựa
 
                 };
 
