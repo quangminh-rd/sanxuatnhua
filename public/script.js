@@ -400,7 +400,7 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     socanHN3_maPhePB: row[67] || '', // Cột BP
                     socanHN4_maPhePB: row[68] || '', // Cột BQ
 
-                    tongSocanHatnhua: '', // Dòng tổng số cân hạt nhựa
+                    tongSocanHatnhua: parseFloat(row[12] || 0) + parseFloat(row[14] || 0) + parseFloat(row[16] || 0) + parseFloat(row[18] || 0), // Dòng tổng số cân hạt nhựa
 
                 };
 
@@ -434,11 +434,7 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('tenHatnhua4').textContent = orderDetails.tenHatnhua4; // Thêm phần này
                 document.getElementById('socanHatnhua4').textContent = formatWithCommas(orderDetails.socanHatnhua4);
 
-                document.getElementById('tongSocanHatnhua').textContent = formatWithCommas(
-                    parseFloat(orderDetails.socanHatnhua1 || 0) +
-                    parseFloat(orderDetails.socanHatnhua2 || 0) +
-                    parseFloat(orderDetails.socanHatnhua3 || 0) +
-                    parseFloat(orderDetails.socanHatnhua4 || 0));
+                document.getElementById('tongSocanHatnhua').textContent = formatWithCommas(tongSocanHatnhua);
 
                 document.getElementById('maThanhphamPB1').textContent = orderDetails.maThanhphamPB1;
                 document.getElementById('socanHN1_maThanhphamPB1').textContent = formatWithCommas(orderDetails.socanHN1_maThanhphamPB1);
