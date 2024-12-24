@@ -587,14 +587,14 @@ async function findDetailsInSheet(maLenhsanxuatURI) {
 
         // Gắn thêm dữ liệu tỷ trọng KH vào orderItems
         orderItems.forEach(item => {
-            item.tytrongKH1 = tyTrongData?.maThanhpham1 || '';
-            item.tytrongKH2 = tyTrongData?.maThanhpham2 || '';
-            item.tytrongKH3 = tyTrongData?.maThanhpham3 || '';
-            item.tytrongKH4 = tyTrongData?.maThanhpham4 || '';
-            item.tytrongKH5 = tyTrongData?.maThanhpham5 || '';
-            item.tytrongKH6 = tyTrongData?.maThanhpham6 || '';
-            item.tytrongKH7 = tyTrongData?.maThanhpham7 || '';
-            item.tytrongKH8 = tyTrongData?.maThanhpham8 || '';
+            item.tytrongKH1 = formatWithCommas(tyTrongData?.maThanhpham1 || '');
+            item.tytrongKH2 = formatWithCommas(tyTrongData?.maThanhpham2 || '');
+            item.tytrongKH3 = formatWithCommas(tyTrongData?.maThanhpham3 || '');
+            item.tytrongKH4 = formatWithCommas(tyTrongData?.maThanhpham4 || '');
+            item.tytrongKH5 = formatWithCommas(tyTrongData?.maThanhpham5 || '');
+            item.tytrongKH6 = formatWithCommas(tyTrongData?.maThanhpham6 || '');
+            item.tytrongKH7 = formatWithCommas(tyTrongData?.maThanhpham7 || '');
+            item.tytrongKH8 = formatWithCommas(tyTrongData?.maThanhpham8 || '');
 
         });
 
@@ -603,12 +603,6 @@ async function findDetailsInSheet(maLenhsanxuatURI) {
         console.error('Error fetching detail data:', error);
         updateContent('Error fetching detail data.');
     }
-}
-
-function formatDate(dateString) {
-    if (!dateString) return ''; // Kiểm tra nếu giá trị rỗng
-    const [month, day, year] = dateString.split('/'); // Tách tháng, ngày, năm từ chuỗi
-    return `${day}/${month}/${year}`; // Trả về định dạng DD/MM/YYYY
 }
 
 function displayDetailData(orderItems) {
@@ -694,7 +688,7 @@ function displayDetailData(orderItems) {
 function extractDetailDataFromRow(row) {
     return {
         lanNhapkho: row[2],
-        ngayNhap: formatDate(row[3]),
+        ngayNhap: row[3],
         tongTrongluong: row[4],
         maThanhpham1: row[5],
         soluongThanhpham1: row[6],
