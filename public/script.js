@@ -402,13 +402,6 @@ async function findRowInSheet(maLenhsanxuatURI) {
 
                 };
 
-                // Tính tổng số cân hạt nhựa
-                orderDetails.tongSocanHatnhua =
-                    (parseFloat(orderDetails.socanHatnhua1) || 0) +
-                    (parseFloat(orderDetails.socanHatnhua2) || 0) +
-                    (parseFloat(orderDetails.socanHatnhua3) || 0) +
-                    (parseFloat(orderDetails.socanHatnhua4) || 0);
-
                 // Tìm tên hạt nhựa
                 orderDetails.tenHatnhua1 = await findHatnhuaName(orderDetails.maHatnhua1);
                 orderDetails.tenHatnhua2 = await findHatnhuaName(orderDetails.maHatnhua2);
@@ -438,8 +431,6 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('maHatnhua4_row2').textContent = orderDetails.maHatnhua4;
                 document.getElementById('tenHatnhua4').textContent = orderDetails.tenHatnhua4; // Thêm phần này
                 document.getElementById('socanHatnhua4').textContent = formatWithCommas(orderDetails.socanHatnhua4);
-
-                document.getElementById('tongSocanHatnhua').textContent = orderDetails.tongSocanHatnhua;
 
                 document.getElementById('maThanhphamPB1').textContent = orderDetails.maThanhphamPB1;
                 document.getElementById('socanHN1_maThanhphamPB1').textContent = formatWithCommas(orderDetails.socanHN1_maThanhphamPB1);
