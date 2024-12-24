@@ -587,14 +587,14 @@ async function findDetailsInSheet(maLenhsanxuatURI) {
 
         // Gắn thêm dữ liệu tỷ trọng KH vào orderItems
         orderItems.forEach(item => {
-            item.tytrongKH1 = formatWithCommas(tyTrongData?.maThanhpham1 || '');
-            item.tytrongKH2 = formatWithCommas(tyTrongData?.maThanhpham2 || '');
-            item.tytrongKH3 = formatWithCommas(tyTrongData?.maThanhpham3 || '');
-            item.tytrongKH4 = formatWithCommas(tyTrongData?.maThanhpham4 || '');
-            item.tytrongKH5 = formatWithCommas(tyTrongData?.maThanhpham5 || '');
-            item.tytrongKH6 = formatWithCommas(tyTrongData?.maThanhpham6 || '');
-            item.tytrongKH7 = formatWithCommas(tyTrongData?.maThanhpham7 || '');
-            item.tytrongKH8 = formatWithCommas(tyTrongData?.maThanhpham8 || '');
+            item.tytrongKH1 = tyTrongData?.maThanhpham1 || '';
+            item.tytrongKH2 = tyTrongData?.maThanhpham2 || '';
+            item.tytrongKH3 = tyTrongData?.maThanhpham3 || '';
+            item.tytrongKH4 = tyTrongData?.maThanhpham4 || '';
+            item.tytrongKH5 = tyTrongData?.maThanhpham5 || '';
+            item.tytrongKH6 = tyTrongData?.maThanhpham6 || '';
+            item.tytrongKH7 = tyTrongData?.maThanhpham7 || '';
+            item.tytrongKH8 = tyTrongData?.maThanhpham8 || '';
 
         });
 
@@ -652,12 +652,12 @@ function displayDetailData(orderItems) {
                 tableRows += `
                     <tr class="bordered-table">
                         <td class="borderedcol-1">${rowData.ma}</td>
-                        <td class="borderedcol-2">${rowData.tytrong}</td>
+                        <td class="borderedcol-2">${formatWithCommas(rowData.tytrong)}</td>
                         <td class="borderedcol-3">${rowData.soluong}</td>
-                        <td class="borderedcol-4">${rowData.trongluong}</td>
-                        <td class="borderedcol-5">${rowData.tytrongKH}</td>
-                        <td class="borderedcol-6">${chenhTytrongDisplay}</td>
-                        <td class="borderedcol-7">${chenhTrongluongDisplay}</td>
+                        <td class="borderedcol-4">${formatWithCommas(rowData.trongluong)}</td>
+                        <td class="borderedcol-5">${formatWithCommas(rowData.tytrongKH)}</td>
+                        <td class="borderedcol-6">${formatWithCommas(chenhTytrongDisplay)}</td>
+                        <td class="borderedcol-7">${formatWithCommas(chenhTrongluongDisplay)}</td>
                     </tr>
                 `;
 
@@ -672,7 +672,7 @@ function displayDetailData(orderItems) {
                 <td class="borderedcol-1"><b>Tổng</b></td>
                 <td class="borderedcol-2"></td>
                 <td class="borderedcol-3"></td>
-                <td class="borderedcol-4"><b>${totalTrongluong.toFixed(2)}</b></td>
+                <td class="borderedcol-4"><b>${formatWithCommas(totalTrongluong)}</b></td>
                 <td class="borderedcol-5"></td>
                 <td class="borderedcol-6"></td>
                 <td class="borderedcol-7"></td>
