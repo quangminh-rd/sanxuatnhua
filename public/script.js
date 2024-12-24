@@ -434,7 +434,11 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('tenHatnhua4').textContent = orderDetails.tenHatnhua4; // Thêm phần này
                 document.getElementById('socanHatnhua4').textContent = formatWithCommas(orderDetails.socanHatnhua4);
 
-                document.getElementById('tongSocanHatnhua').textContent = formatWithCommas(orderDetails.socanHatnhua1) + formatWithCommas(orderDetails.socanHatnhua2) + formatWithCommas(orderDetails.socanHatnhua3) + formatWithCommas(orderDetails.socanHatnhua4);
+                document.getElementById('tongSocanHatnhua').textContent = formatWithCommas(
+                    parseFloat(orderDetails.socanHatnhua1 || 0) +
+                    parseFloat(orderDetails.socanHatnhua2 || 0) +
+                    parseFloat(orderDetails.socanHatnhua3 || 0) +
+                    parseFloat(orderDetails.socanHatnhua4 || 0));
 
                 document.getElementById('maThanhphamPB1').textContent = orderDetails.maThanhphamPB1;
                 document.getElementById('socanHN1_maThanhphamPB1').textContent = formatWithCommas(orderDetails.socanHN1_maThanhphamPB1);
