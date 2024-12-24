@@ -342,13 +342,13 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     namXuat: row[3] || '', // Cột D
                     maKhuon: row[5] || '', // Cột F
                     maHatnhua1: row[11] || '', // Cột L
-                    socanHatnhua1: row[12] || '', // Cột M
+                    socanHatnhua1: parseFloat(row[12]) || '', // Cột M
                     maHatnhua2: row[13] || '', // Cột N
-                    socanHatnhua2: row[14] || '', // Cột O
+                    socanHatnhua2: parseFloat(row[14]) || '', // Cột O
                     maHatnhua3: row[15] || '', // Cột P
-                    socanHatnhua3: row[16] || '', // Cột Q
+                    socanHatnhua3: parseFloat(row[16]) || '', // Cột Q
                     maHatnhua4: row[17] || '', // Cột R
-                    socanHatnhua4: row[18] || '', // Cột S
+                    socanHatnhua4: parseFloat(row[18]) || '', // Cột S
                     maThanhphamPB1: row[19] || '', // Cột T
                     socanHN1_maThanhphamPB1: row[20] || '', // Cột U
                     socanHN2_maThanhphamPB1: row[21] || '', // Cột V
@@ -400,9 +400,14 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     socanHN3_maPhePB: row[67] || '', // Cột BP
                     socanHN4_maPhePB: row[68] || '', // Cột BQ
 
-                    tongSocanHatnhua: '', // Dòng tổng số cân hạt nhựa
-
                 };
+
+                // Tính tổng số cân hạt nhựa
+                orderDetails.tongSocanHatnhua =
+                    orderDetails.socanHatnhua1 +
+                    orderDetails.socanHatnhua2 +
+                    orderDetails.socanHatnhua3 +
+                    orderDetails.socanHatnhua4;
 
                 // Tìm tên hạt nhựa
                 orderDetails.tenHatnhua1 = await findHatnhuaName(orderDetails.maHatnhua1);
@@ -434,12 +439,7 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('tenHatnhua4').textContent = orderDetails.tenHatnhua4; // Thêm phần này
                 document.getElementById('socanHatnhua4').textContent = formatWithCommas(orderDetails.socanHatnhua4);
 
-                document.getElementById('tongSocanHatnhua').textContent = formatWithCommas(
-                    parseFloat(orderDetails.socanHatnhua1.replace(/./g, '') || 0) +
-                    parseFloat(orderDetails.socanHatnhua2.replace(/./g, '') || 0) +
-                    parseFloat(orderDetails.socanHatnhua3.replace(/./g, '') || 0) +
-                    parseFloat(orderDetails.socanHatnhua4.replace(/./g, '') || 0)
-                );
+                document.getElementById('tongSocanHatnhua').textContent = formatWithCommas(orderDetails.tongSocanHatnhua);
 
                 document.getElementById('maThanhphamPB1').textContent = orderDetails.maThanhphamPB1;
                 document.getElementById('socanHN1_maThanhphamPB1').textContent = formatWithCommas(orderDetails.socanHN1_maThanhphamPB1);
