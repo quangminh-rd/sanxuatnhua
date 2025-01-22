@@ -341,7 +341,11 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     thangXuat: row[2] || '', // Cột C
                     namXuat: row[3] || '', // Cột D
                     maKhuon: row[5] || '', // Cột F
-                    tongTrongluongnhua: row[8] || '', // Cột I
+                    tongTrongluongXuat: row[8] || '', // Cột I
+                    tongTrongluongNhap: row[9] || '', // Cột J
+                    tyleHaohutThucte: row[10] || '', // Cột K
+                    tyleHaohutDm: row[11] || '', // Cột L
+                    chenhlechHaohut: row[12] || '', // Cột M
                     maHatnhua1: row[13] || '', // Cột N
                     socanHatnhua1: row[14] || '', // Cột O
                     maHatnhua2: row[15] || '', // Cột P
@@ -416,7 +420,11 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('thangXuat').textContent = orderDetails.thangXuat;
                 document.getElementById('namXuat').textContent = orderDetails.namXuat;
                 document.getElementById('maKhuon').textContent = orderDetails.maKhuon;
-                document.getElementById('tongTrongluongnhua').textContent = formatWithCommas(orderDetails.tongTrongluongnhua);
+                document.getElementById('tongTrongluongXuat').textContent = formatWithCommas(orderDetails.tongTrongluongXuat);
+                document.getElementById('tongTrongluongNhap').textContent = formatWithCommas(orderDetails.tongTrongluongNhap);
+                document.getElementById('tyleHaohutThucte').textContent = formatWithCommas(orderDetails.tyleHaohutThucte);
+                document.getElementById('tyleHaohutDm').textContent = formatWithCommas(orderDetails.tyleHaohutDm);
+                document.getElementById('chenhlechHaohut').textContent = formatWithCommas(orderDetails.chenhlechHaohut);
                 document.getElementById('maHatnhua1_row1').textContent = orderDetails.maHatnhua1;
                 document.getElementById('maHatnhua1_row2').textContent = orderDetails.maHatnhua1;
                 document.getElementById('tenHatnhua1').textContent = orderDetails.tenHatnhua1; // Thêm phần này
