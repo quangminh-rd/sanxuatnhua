@@ -808,7 +808,7 @@ function displayDetailData(orderItems) {
 
         let tableRows = `
             <p style="white-space: nowrap;"><b>Lần nhập: ${item.lanNhapkho || ''}</b></p>
-            <p style="white-space: nowrap;">Ngày nhập: ${formatDate(item.ngayNhap) || ''}</p>
+            <p style="white-space: nowrap;">  - Ngày nhập: ${formatDate(item.ngayNhap) || ''}</p>
             <tr class="bordered-table">
                 <th class="borderedcol-1-H">Mã thành phẩm</th>
                 <th class="borderedcol-2">TL nhập<br>(kg)</th>
