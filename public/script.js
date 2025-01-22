@@ -342,6 +342,7 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     namXuat: row[3] || '', // Cột D
                     maKhuon: row[5] || '', // Cột F
                     tongTrongluongXuat: row[8] || '', // Cột I
+                    tongTrongluongXuat2: row[8] || '', // Cột I
                     tongTrongluongNhap: row[9] || '', // Cột J
                     tyleHaohutThucte: row[10] || '', // Cột K
                     tyleHaohutDm: row[11] || '', // Cột L
@@ -421,6 +422,7 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('namXuat').textContent = orderDetails.namXuat;
                 document.getElementById('maKhuon').textContent = orderDetails.maKhuon;
                 document.getElementById('tongTrongluongXuat').textContent = formatWithCommas(orderDetails.tongTrongluongXuat);
+                document.getElementById('tongTrongluongXuat2').textContent = formatWithCommas(orderDetails.tongTrongluongXuat2);
                 document.getElementById('tongTrongluongNhap').textContent = formatWithCommas(orderDetails.tongTrongluongNhap);
                 document.getElementById('tyleHaohutThucte').textContent = formatWithCommas(orderDetails.tyleHaohutThucte);
                 document.getElementById('tyleHaohutDm').textContent = formatWithCommas(orderDetails.tyleHaohutDm);
