@@ -623,16 +623,16 @@ function displayDetailData(orderItems) {
 
         // Tạo các dòng động với kiểm tra điều kiện
         const rows = [
-            { ma: item.maThanhpham1, tytrong: item.tytrongttThanhpham1, soluong: item.soluongThanhpham1, trongluong: item.trongluongThanhpham1, tytrongKH: item.tytrongKH1 },
-            { ma: item.maThanhpham2, tytrong: item.tytrongttThanhpham2, soluong: item.soluongThanhpham2, trongluong: item.trongluongThanhpham2, tytrongKH: item.tytrongKH2 },
-            { ma: item.maThanhpham3, tytrong: item.tytrongttThanhpham3, soluong: item.soluongThanhpham3, trongluong: item.trongluongThanhpham3, tytrongKH: item.tytrongKH3 },
-            { ma: item.maThanhpham4, tytrong: item.tytrongttThanhpham4, soluong: item.soluongThanhpham4, trongluong: item.trongluongThanhpham4, tytrongKH: item.tytrongKH4 },
-            { ma: item.maThanhpham5, tytrong: item.tytrongttThanhpham5, soluong: item.soluongThanhpham5, trongluong: item.trongluongThanhpham5, tytrongKH: item.tytrongKH5 },
-            { ma: item.maThanhpham6, tytrong: item.tytrongttThanhpham6, soluong: item.soluongThanhpham6, trongluong: item.trongluongThanhpham6, tytrongKH: item.tytrongKH6 },
-            { ma: item.maThanhpham7, tytrong: item.tytrongttThanhpham7, soluong: item.soluongThanhpham7, trongluong: item.trongluongThanhpham7, tytrongKH: item.tytrongKH7 },
-            { ma: item.maThanhpham8, tytrong: item.tytrongttThanhpham8, soluong: item.soluongThanhpham8, trongluong: item.trongluongThanhpham8, tytrongKH: item.tytrongKH8 },
-            { ma: item.maHatnhuataiche, tytrong: '', soluong: '', trongluong: item.trongluongHatnhuataiche, tytrongKH: '' },
-            { ma: item.maHatnhuaphe, tytrong: '', soluong: '', trongluong: item.trongluongHatnhuaphe, tytrongKH: '' },
+            { ma: item.maThanhpham1, trongluong: item.trongluongThanhpham1, soluong: item.soluongThanhpham1, tytrong: item.tytrongttThanhpham1, tytrongKH: item.tytrongKH1 },
+            { ma: item.maThanhpham2, trongluong: item.trongluongThanhpham2, soluong: item.soluongThanhpham2, tytrong: item.tytrongttThanhpham2, tytrongKH: item.tytrongKH2 },
+            { ma: item.maThanhpham3, trongluong: item.trongluongThanhpham3, soluong: item.soluongThanhpham3, tytrong: item.tytrongttThanhpham3, tytrongKH: item.tytrongKH3 },
+            { ma: item.maThanhpham4, trongluong: item.trongluongThanhpham4, soluong: item.soluongThanhpham4, tytrong: item.tytrongttThanhpham4, tytrongKH: item.tytrongKH4 },
+            { ma: item.maThanhpham5, trongluong: item.trongluongThanhpham5, soluong: item.soluongThanhpham5, tytrong: item.tytrongttThanhpham5, tytrongKH: item.tytrongKH5 },
+            { ma: item.maThanhpham6, trongluong: item.trongluongThanhpham6, soluong: item.soluongThanhpham6, tytrong: item.tytrongttThanhpham6, tytrongKH: item.tytrongKH6 },
+            { ma: item.maThanhpham7, trongluong: item.trongluongThanhpham7, soluong: item.soluongThanhpham7, tytrong: item.tytrongttThanhpham7, tytrongKH: item.tytrongKH7 },
+            { ma: item.maThanhpham8, trongluong: item.trongluongThanhpham8, soluong: item.soluongThanhpham8, tytrong: item.tytrongttThanhpham8, tytrongKH: item.tytrongKH8 },
+            { ma: item.maHatnhuataiche, trongluong: item.trongluongHatnhuataiche, soluong: '', tytrong: '', tytrongKH: '' },
+            { ma: item.maHatnhuaphe, trongluong: item.trongluongHatnhuaphe, soluong: '', tytrong: '', tytrongKH: '' },
         ];
 
         let tableRows = `
@@ -640,9 +640,9 @@ function displayDetailData(orderItems) {
             <p style="white-space: nowrap;">Ngày nhập: ${item.ngayNhap || ''}</p>
             <tr class="bordered-table">
                 <th class="borderedcol-1-H">Mã thành phẩm</th>
-                <th class="borderedcol-2">Tỷ trọng TT<br>(g/cái)</th>
+                <th class="borderedcol-2">TL nhập<br>(kg)</th>
                 <th class="borderedcol-3">SL nhập<br>(cái)</th>
-                <th class="borderedcol-4">TL nhập<br>(kg)</th>
+                <th class="borderedcol-4">Tỷ trọng TT<br>(g/cái)</th>
                 <th class="borderedcol-5">Tỷ trọng KH<br>(g/cái)</th>
                 <th class="borderedcol-6">Chênh Tỷ trọng<br>(g/cái)</th>
                 <th class="borderedcol-7">Chênh TL<br>(kg)</th>
@@ -661,9 +661,9 @@ function displayDetailData(orderItems) {
                 tableRows += `
                     <tr class="bordered-table">
                         <td class="borderedcol-1">${rowData.ma}</td>
-                        <td class="borderedcol-2">${formatWithCommas(rowData.tytrong)}</td>
+                        <td class="borderedcol-2">${formatWithCommas(rowData.trongluong)}</td>
                         <td class="borderedcol-3">${rowData.soluong}</td>
-                        <td class="borderedcol-4">${formatWithCommas(rowData.trongluong)}</td>
+                        <td class="borderedcol-4">${formatWithCommas(rowData.tytrong)}</td>
                         <td class="borderedcol-5">${formatWithCommas(rowData.tytrongKH)}</td>
                         <td class="borderedcol-6">${formatWithCommas(chenhTytrongDisplay)}</td>
                         <td class="borderedcol-7">${formatWithCommas(chenhTrongluongDisplay)}</td>
@@ -679,9 +679,9 @@ function displayDetailData(orderItems) {
         tableRows += `
             <tr class="bordered-table">
                 <td class="borderedcol-1"><b>Tổng</b></td>
-                <td class="borderedcol-2"></td>
+                <td class="borderedcol-2"><b>${formatWithCommas(totalTrongluong.toFixed(3))}</b></td>
                 <td class="borderedcol-3"></td>
-                <td class="borderedcol-4"><b>${formatWithCommas(totalTrongluong.toFixed(3))}</b></td>
+                <td class="borderedcol-4"></td>
                 <td class="borderedcol-5"></td>
                 <td class="borderedcol-6"></td>
                 <td class="borderedcol-7"></td>
