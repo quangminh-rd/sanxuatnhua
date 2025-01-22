@@ -535,6 +535,10 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     parseFloat(orderDetails.socanHN3_maPhePB || 0) +
                     parseFloat(orderDetails.socanHN4_maPhePB || 0);
 
+                const tongSocanPhanbo =
+                    tongSocanHatnhua1 + tongSocanHatnhua2 + tongSocanHatnhua3 + tongSocanHatnhua4 +
+                    tongSocanThanhpham1 + tongSocanThanhpham2 + tongSocanThanhpham3 + tongSocanThanhpham4 + tongSocanThanhpham5 + tongSocanThanhpham6 + tongSocanThanhpham7 + tongSocanThanhpham8 + tongSocanTaiche + tongSocanPhe
+
                 // Cập nhật vào orderDetails
                 orderDetails.tongSocanHatnhua1 = tongSocanHatnhua1;
                 orderDetails.tongSocanHatnhua2 = tongSocanHatnhua2;
@@ -551,6 +555,8 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 orderDetails.tongSocanThanhpham8 = tongSocanThanhpham8;
                 orderDetails.tongSocanTaiche = tongSocanTaiche;
                 orderDetails.tongSocanPhe = tongSocanPhe;
+
+                orderDetails.tongSocanPhanbo = tongSocanPhanbo;
 
                 // Cập nhật nội dung HTML
                 document.getElementById('maLenhsanxuat').textContent = orderDetails.maLenhsanxuat;
@@ -657,6 +663,8 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('tongSocanThanhpham8').textContent = replaceDotWithComma(orderDetails.tongSocanThanhpham8);
                 document.getElementById('tongSocanTaiche').textContent = replaceDotWithComma(orderDetails.tongSocanTaiche);
                 document.getElementById('tongSocanPhe').textContent = replaceDotWithComma(orderDetails.tongSocanPhe);
+
+                document.getElementById('tongSocanPhanbo').textContent = replaceDotWithComma(orderDetails.tongSocanPhanbo);
 
 
                 // Gọi hàm ẩn các dòng trống
