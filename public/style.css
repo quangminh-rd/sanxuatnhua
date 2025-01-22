@@ -121,27 +121,32 @@ img {
 }
 
 .slicecol-1 {
-    width: 28%;
+    width: 22%;
     text-align: left;
 }
 
 .slicecol-2 {
-    width: 23%;
+    width: 18%;
     text-align: center;
 }
 
 .slicecol-3 {
-    width: 23%;
+    width: 18%;
     text-align: center;
 }
 
 .slicecol-4 {
-    width: 13%;
+    width: 18%;
     text-align: center;
 }
 
 .slicecol-5 {
-    width: 13%;
+    width: 18%;
+    text-align: center;
+}
+
+.slicecol-6 {
+    width: 6%;
     text-align: center;
 }
 
@@ -358,27 +363,32 @@ img {
     }
 
     .slicecol-1 {
-        width: 28%;
+        width: 22%;
         text-align: left;
     }
 
     .slicecol-2 {
-        width: 23%;
+        width: 18%;
         text-align: center;
     }
 
     .slicecol-3 {
-        width: 23%;
+        width: 18%;
         text-align: center;
     }
 
     .slicecol-4 {
-        width: 13%;
+        width: 18%;
         text-align: center;
     }
 
     .slicecol-5 {
-        width: 13%;
+        width: 18%;
+        text-align: center;
+    }
+
+    .slicecol-6 {
+        width: 6%;
         text-align: center;
     }
 
