@@ -182,6 +182,14 @@ function hideEmptyRowsSlice() {
     }
 }
 
+function formatDate(dateString) {
+    if (!dateString) return ''; // Kiểm tra nếu giá trị null hoặc undefined
+    const date = new Date(dateString);
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Tháng bắt đầu từ 0
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+}
 
 function extractDay(dateString) {
     if (!dateString) return '';
@@ -637,7 +645,7 @@ function displayDetailData(orderItems) {
 
         let tableRows = `
             <p style="white-space: nowrap;"><b>Lần nhập: ${item.lanNhapkho || ''}</b></p>
-            <p style="white-space: nowrap;">Ngày nhập: ${item.ngayNhap || ''}</p>
+            <p style="white-space: nowrap;">Ngày nhập: ${formatDate(item.ngayNhap) || ''}</p>
             <tr class="bordered-table">
                 <th class="borderedcol-1-H">Mã thành phẩm</th>
                 <th class="borderedcol-2">TL nhập<br>(kg)</th>
