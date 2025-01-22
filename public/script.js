@@ -421,6 +421,22 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 orderDetails.tenHatnhua3 = await findHatnhuaName(orderDetails.maHatnhua3);
                 orderDetails.tenHatnhua4 = await findHatnhuaName(orderDetails.maHatnhua4);
 
+                // Thêm vào trong đoạn sau khi đã đọc dữ liệu từ bảng
+                const tongSocanHatnhua1 =
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB1 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB2 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB3 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB4 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB5 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB6 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB7 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB8 || 0) +
+                    parseFloat(orderDetails.socanHN1_maTaichePB || 0) +
+                    parseFloat(orderDetails.socanHN1_maPhePB || 0);
+
+                // Cập nhật vào orderDetails
+                orderDetails.tongSocanHatnhua1 = tongSocanHatnhua1;
+
                 // Cập nhật nội dung HTML
                 document.getElementById('maLenhsanxuat').textContent = orderDetails.maLenhsanxuat;
                 document.getElementById('xuongSanXuat').textContent = orderDetails.xuongSanXuat;
@@ -510,6 +526,8 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('socanHN2_maPhePB').textContent = formatWithCommas(orderDetails.socanHN2_maPhePB);
                 document.getElementById('socanHN3_maPhePB').textContent = formatWithCommas(orderDetails.socanHN3_maPhePB);
                 document.getElementById('socanHN4_maPhePB').textContent = formatWithCommas(orderDetails.socanHN4_maPhePB);
+
+                document.getElementById('tongSocanHatnhua1').textContent = formatWithCommas(orderDetails.tongSocanHatnhua1);
 
                 // Gọi hàm ẩn các dòng trống
                 hideEmptyRows();
