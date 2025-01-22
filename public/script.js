@@ -215,10 +215,10 @@ function extractDay(dateString) {
 }
 
 const SPREADSHEET_ID = '1tUfZE9Ok2FQjhHY9sSbpl5VyuireOlv7iE9YTOvROj8';
-const RANGE = 'lenh_san_xuat!A:BQ'; // Mở rộng phạm vi đến cột BQ
+const RANGE = 'lenh_san_xuat!A:BZ'; // Mở rộng phạm vi đến cột BQ
 const RANGE_CHITIET = 'lenh_san_xuat_chi_tiet!A:AO'; // Dải dữ liệu từ sheet 'don_hang_chi_tiet'
 const RANGE_HATNHUA = 'danh_sach_hat_nhua!A:B'; // Dải dữ liệu từ sheet "danh_sach_hat_nhua"
-const RANGE_KHUON = 'danh_sach_khuon!A:AE'; // Dải dữ liệu từ sheet 'danh_sach_khuon'
+const RANGE_KHUON = 'danh_sach_khuon!A:AN'; // Dải dữ liệu từ sheet 'danh_sach_khuon'
 const API_KEY = 'AIzaSyA9g2qFUolpsu3_HVHOebdZb0NXnQgXlFM';
 
 // Lấy giá trị từ URI sau dấu "?" cho các tham số cụ thể
@@ -342,64 +342,64 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     namXuat: row[3] || '', // Cột D
                     maKhuon: row[5] || '', // Cột F
                     tongTrongluongnhua: row[8] || '', // Cột M
-                    maHatnhua1: row[11] || '', // Cột L
-                    socanHatnhua1: row[12] || '', // Cột M
-                    maHatnhua2: row[13] || '', // Cột N
-                    socanHatnhua2: row[14] || '', // Cột O
-                    maHatnhua3: row[15] || '', // Cột P
-                    socanHatnhua3: row[16] || '', // Cột Q
-                    maHatnhua4: row[17] || '', // Cột R
-                    socanHatnhua4: row[18] || '', // Cột S
-                    maThanhphamPB1: row[19] || '', // Cột T
-                    socanHN1_maThanhphamPB1: row[20] || '', // Cột U
-                    socanHN2_maThanhphamPB1: row[21] || '', // Cột V
-                    socanHN3_maThanhphamPB1: row[22] || '', // Cột W
-                    socanHN4_maThanhphamPB1: row[23] || '', // Cột X
-                    maThanhphamPB2: row[24] || '', // Cột Y
-                    socanHN1_maThanhphamPB2: row[25] || '', // Cột Z
-                    socanHN2_maThanhphamPB2: row[26] || '', // Cột AA
-                    socanHN3_maThanhphamPB2: row[27] || '', // Cột AB
-                    socanHN4_maThanhphamPB2: row[28] || '', // Cột AC
-                    maThanhphamPB3: row[29] || '', // Cột AD
-                    socanHN1_maThanhphamPB3: row[30] || '', // Cột AE
-                    socanHN2_maThanhphamPB3: row[31] || '', // Cột AF
-                    socanHN3_maThanhphamPB3: row[32] || '', // Cột AG
-                    socanHN4_maThanhphamPB3: row[33] || '', // Cột AH
-                    maThanhphamPB4: row[34] || '', // Cột AI
-                    socanHN1_maThanhphamPB4: row[35] || '', // Cột AJ
-                    socanHN2_maThanhphamPB4: row[36] || '', // Cột AK
-                    socanHN3_maThanhphamPB4: row[37] || '', // Cột AL
-                    socanHN4_maThanhphamPB4: row[38] || '', // Cột AM
-                    maThanhphamPB5: row[39] || '', // Cột AN
-                    socanHN1_maThanhphamPB5: row[40] || '', // Cột AO
-                    socanHN2_maThanhphamPB5: row[41] || '', // Cột AP
-                    socanHN3_maThanhphamPB5: row[42] || '', // Cột AQ
-                    socanHN4_maThanhphamPB5: row[43] || '', // Cột AR
-                    maThanhphamPB6: row[44] || '', // Cột AS
-                    socanHN1_maThanhphamPB6: row[45] || '', // Cột AT
-                    socanHN2_maThanhphamPB6: row[46] || '', // Cột AU
-                    socanHN3_maThanhphamPB6: row[47] || '', // Cột AV
-                    socanHN4_maThanhphamPB6: row[48] || '', // Cột AW
-                    maThanhphamPB7: row[49] || '', // Cột AX
-                    socanHN1_maThanhphamPB7: row[50] || '', // Cột AY
-                    socanHN2_maThanhphamPB7: row[51] || '', // Cột AZ
-                    socanHN3_maThanhphamPB7: row[52] || '', // Cột BA
-                    socanHN4_maThanhphamPB7: row[53] || '', // Cột BB
-                    maThanhphamPB8: row[54] || '', // Cột BC
-                    socanHN1_maThanhphamPB8: row[55] || '', // Cột BD
-                    socanHN2_maThanhphamPB8: row[56] || '', // Cột BE
-                    socanHN3_maThanhphamPB8: row[57] || '', // Cột BF
-                    socanHN4_maThanhphamPB8: row[58] || '', // Cột BG
-                    maTaichePB: row[59] || '', // Cột BH
-                    socanHN1_maTaichePB: row[60] || '', // Cột BI
-                    socanHN2_maTaichePB: row[61] || '', // Cột BJ
-                    socanHN3_maTaichePB: row[62] || '', // Cột BK
-                    socanHN4_maTaichePB: row[63] || '', // Cột BL
-                    maPhePB: row[64] || '', // Cột BM
-                    socanHN1_maPhePB: row[65] || '', // Cột BN
-                    socanHN2_maPhePB: row[66] || '', // Cột BO
-                    socanHN3_maPhePB: row[67] || '', // Cột BP
-                    socanHN4_maPhePB: row[68] || '', // Cột BQ
+                    maHatnhua1: row[13] || '', // Cột N
+                    socanHatnhua1: row[14] || '', // Cột O
+                    maHatnhua2: row[15] || '', // Cột P
+                    socanHatnhua2: row[16] || '', // Cột Q
+                    maHatnhua3: row[17] || '', // Cột R
+                    socanHatnhua3: row[18] || '', // Cột S
+                    maHatnhua4: row[19] || '', // Cột T
+                    socanHatnhua4: row[20] || '', // Cột U
+                    maThanhphamPB1: row[21] || '', // Cột V
+                    socanHN1_maThanhphamPB1: row[22] || '', // Cột W
+                    socanHN2_maThanhphamPB1: row[23] || '', // Cột X
+                    socanHN3_maThanhphamPB1: row[24] || '', // Cột Y
+                    socanHN4_maThanhphamPB1: row[25] || '', // Cột Z
+                    maThanhphamPB2: row[26] || '', // Cột AA
+                    socanHN1_maThanhphamPB2: row[27] || '', // Cột AB
+                    socanHN2_maThanhphamPB2: row[28] || '', // Cột AC
+                    socanHN3_maThanhphamPB2: row[29] || '', // Cột AD
+                    socanHN4_maThanhphamPB2: row[30] || '', // Cột AE
+                    maThanhphamPB3: row[31] || '', // Cột AF
+                    socanHN1_maThanhphamPB3: row[32] || '', // Cột AG
+                    socanHN2_maThanhphamPB3: row[33] || '', // Cột AH
+                    socanHN3_maThanhphamPB3: row[34] || '', // Cột AI
+                    socanHN4_maThanhphamPB3: row[35] || '', // Cột AJ
+                    maThanhphamPB4: row[36] || '', // Cột AK
+                    socanHN1_maThanhphamPB4: row[37] || '', // Cột AL
+                    socanHN2_maThanhphamPB4: row[38] || '', // Cột AM
+                    socanHN3_maThanhphamPB4: row[39] || '', // Cột AN
+                    socanHN4_maThanhphamPB4: row[40] || '', // Cột AO
+                    maThanhphamPB5: row[41] || '', // Cột AP
+                    socanHN1_maThanhphamPB5: row[42] || '', // Cột AQ
+                    socanHN2_maThanhphamPB5: row[43] || '', // Cột AR
+                    socanHN3_maThanhphamPB5: row[44] || '', // Cột AS
+                    socanHN4_maThanhphamPB5: row[45] || '', // Cột AT
+                    maThanhphamPB6: row[46] || '', // Cột AU
+                    socanHN1_maThanhphamPB6: row[47] || '', // Cột AV
+                    socanHN2_maThanhphamPB6: row[48] || '', // Cột AW
+                    socanHN3_maThanhphamPB6: row[49] || '', // Cột AX
+                    socanHN4_maThanhphamPB6: row[50] || '', // Cột AY
+                    maThanhphamPB7: row[51] || '', // Cột AZ
+                    socanHN1_maThanhphamPB7: row[52] || '', // Cột BA
+                    socanHN2_maThanhphamPB7: row[53] || '', // Cột BB
+                    socanHN3_maThanhphamPB7: row[54] || '', // Cột BC
+                    socanHN4_maThanhphamPB7: row[55] || '', // Cột BD
+                    maThanhphamPB8: row[56] || '', // Cột BE
+                    socanHN1_maThanhphamPB8: row[57] || '', // Cột BF
+                    socanHN2_maThanhphamPB8: row[58] || '', // Cột BG
+                    socanHN3_maThanhphamPB8: row[59] || '', // Cột BH
+                    socanHN4_maThanhphamPB8: row[60] || '', // Cột BI
+                    maTaichePB: row[61] || '', // Cột BJ
+                    socanHN1_maTaichePB: row[62] || '', // Cột BK
+                    socanHN2_maTaichePB: row[63] || '', // Cột BL
+                    socanHN3_maTaichePB: row[64] || '', // Cột BM
+                    socanHN4_maTaichePB: row[65] || '', // Cột BN
+                    maPhePB: row[66] || '', // Cột BO
+                    socanHN1_maPhePB: row[67] || '', // Cột BP
+                    socanHN2_maPhePB: row[68] || '', // Cột BQ
+                    socanHN3_maPhePB: row[69] || '', // Cột BR
+                    socanHN4_maPhePB: row[70] || '', // Cột BS
 
                 };
 
@@ -534,14 +534,14 @@ async function fetchTyTrongKH(orderDetails) {
         }
 
         const columnMap = {
-            maThanhpham1: { findCol: 9, tyTrongCol: 11 }, // J và L
-            maThanhpham2: { findCol: 12, tyTrongCol: 14 }, // M và O
-            maThanhpham3: { findCol: 15, tyTrongCol: 17 }, // P và R
-            maThanhpham4: { findCol: 18, tyTrongCol: 20 }, // S và U
-            maThanhpham5: { findCol: 21, tyTrongCol: 23 }, // V và X
-            maThanhpham6: { findCol: 24, tyTrongCol: 26 }, // Y và AA
-            maThanhpham7: { findCol: 27, tyTrongCol: 29 }, // AB và AD
-            maThanhpham8: { findCol: 30, tyTrongCol: 32 }, // AE và AG
+            maThanhpham1: { findCol: 10, tyTrongCol: 12 }, // K và M
+            maThanhpham2: { findCol: 13, tyTrongCol: 15 }, // N và P
+            maThanhpham3: { findCol: 16, tyTrongCol: 18 }, // Q và S
+            maThanhpham4: { findCol: 19, tyTrongCol: 21 }, // T và V
+            maThanhpham5: { findCol: 22, tyTrongCol: 24 }, // W và Y
+            maThanhpham6: { findCol: 25, tyTrongCol: 27 }, // Z và AB
+            maThanhpham7: { findCol: 28, tyTrongCol: 30 }, // AC và AE
+            maThanhpham8: { findCol: 31, tyTrongCol: 33 }, // AF và AH
         };
 
         const tyTrongData = {};
