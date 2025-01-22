@@ -681,7 +681,7 @@ function displayDetailData(orderItems) {
                 <td class="borderedcol-1"><b>Tổng</b></td>
                 <td class="borderedcol-2"></td>
                 <td class="borderedcol-3"></td>
-                <td class="borderedcol-4"><b>${formatWithCommas(totalTrongluong)}</b></td>
+                <td class="borderedcol-4"></td>
                 <td class="borderedcol-5"></td>
                 <td class="borderedcol-6"></td>
                 <td class="borderedcol-7"></td>
