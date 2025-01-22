@@ -637,7 +637,7 @@ function displayDetailData(orderItems) {
 
         let tableRows = `
             <p style="white-space: nowrap;"><b>Lần nhập: ${item.lanNhapkho || ''}</b></p>
-            <p style="white-space: nowrap;"><b>Ngày nhập: ${item.ngayNhap || ''}</b></p>
+            <p style="white-space: nowrap;">Ngày nhập: ${item.ngayNhap || ''}</p>
             <tr class="bordered-table">
                 <th class="borderedcol-1-H">Mã thành phẩm</th>
                 <th class="borderedcol-2">Tỷ trọng TT<br>(g/cái)</th>
@@ -681,7 +681,7 @@ function displayDetailData(orderItems) {
                 <td class="borderedcol-1"><b>Tổng</b></td>
                 <td class="borderedcol-2"></td>
                 <td class="borderedcol-3"></td>
-                <td class="borderedcol-4"></td>
+                <td class="borderedcol-4"><b>${formatWithCommas(totalTrongluong.toFixed(3))}</b></td>
                 <td class="borderedcol-5"></td>
                 <td class="borderedcol-6"></td>
                 <td class="borderedcol-7"></td>
