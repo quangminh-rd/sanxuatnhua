@@ -341,7 +341,7 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     thangXuat: row[2] || '', // Cột C
                     namXuat: row[3] || '', // Cột D
                     maKhuon: row[5] || '', // Cột F
-                    tongTrongluongnhua: row[8] || '', // Cột M
+                    tongTrongluongnhua: row[8] || '', // Cột I
                     maHatnhua1: row[13] || '', // Cột N
                     socanHatnhua1: row[14] || '', // Cột O
                     maHatnhua2: row[15] || '', // Cột P
