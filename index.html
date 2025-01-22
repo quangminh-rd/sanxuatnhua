@@ -821,7 +821,7 @@
 
             let tableRows = `
             <p style="white-space: nowrap;"><b>Lần nhập: ${item.lanNhapkho || ''}</b></p>
-            <p style="white-space: nowrap;">Ngày nhập: ${formatDate(item.ngayNhap) || ''}</p>
+            <p style="white-space: nowrap;">  - Ngày nhập: ${formatDate(item.ngayNhap) || ''}</p>
             <tr class="bordered-table">
                 <th class="borderedcol-1-H">Mã thành phẩm</th>
                 <th class="borderedcol-2">TL nhập<br>(kg)</th>
@@ -847,7 +847,7 @@
                         <td class="borderedcol-1">${rowData.ma}</td>
                         <td class="borderedcol-2">${formatWithCommas(rowData.trongluong)}</td>
                         <td class="borderedcol-3">${rowData.soluong}</td>
-                        <td class="borderedcol-4">${formatWithCommas(rowData.tytrong)}</td>
+                        <td class="borderedcol-4">${formatWithCommas(rowData.tytrong || '')}</td>
                         <td class="borderedcol-5">${formatWithCommas(rowData.tytrongKH)}</td>
                         <td class="borderedcol-6">${formatWithCommas(chenhTytrongDisplay)}</td>
                         <td class="borderedcol-7">${formatWithCommas(chenhTrongluongDisplay)}</td>
@@ -935,7 +935,7 @@
     <div class="content">
         <img src="https://i.imgur.com/vfwvNd4.jpg" alt="Mô tả hình ảnh">
         <h2 style="text-align: center">PHIẾU YÊU CẦU SẢN XUẤT PHỤ KIỆN NHỰA</h2>
-        <p style="text-align: center">(Lệnh sản xuất số: <span id="maLenhsanxuat">Đang tải...</span>)</p>
+        <p style="text-align: center">(Lệnh sản xuất phụ kiện số: <span id="maLenhsanxuat">Đang tải...</span>)</p>
         <p style="text-align: right"><i>Xưởng <span id="xuongSanXuat">Đang tải...</span>,
                 Ngày <span id="ngayXuat">Đang tải...</span>
                 <span id="thangXuat">Đang tải...</span>
@@ -943,11 +943,11 @@
         <table class="info-table">
             <tbody>
                 <p><b>Mã khuôn: <span id="maKhuon">Đang tải...</span></b></p>
-                <p>Tổng trọng lượng xuất: <span id="tongTrongluongXuat">Đang tải...</span> kg</p>
-                <p>Tổng trọng lượng nhập: <span id="tongTrongluongNhap">Đang tải...</span> kg</p>
-                <p>Tỷ lệ hao hụt: <span id="tyleHaohutThucte">Đang tải...</span>%</p>
-                <p>Tỷ lệ định mức: <span id="tyleHaohutDm">Đang tải...</span>%</p>
-                <p>Chênh lệch tỷ lệ hao hụt: <span id="chenhlechHaohut">Đang tải...</span>%</p>
+                <p> - Tổng trọng lượng xuất: <span id="tongTrongluongXuat">Đang tải...</span> kg</p>
+                <p> - Tổng trọng lượng nhập: <span id="tongTrongluongNhap">Đang tải...</span> kg</p>
+                <p> - Tỷ lệ hao hụt: <span id="tyleHaohutThucte">Đang tải...</span>%</p>
+                <p> - Tỷ lệ định mức: <span id="tyleHaohutDm">Đang tải...</span>%</p>
+                <p> - Chênh lệch tỷ lệ hao hụt: <span id="chenhlechHaohut">Đang tải...</span>%</p>
                 <tr>
                     <th class="infocol-1-H">Mã hạt nhựa</th>
                     <th class="infocol-2-H">Tên hạt nhựa</th>
