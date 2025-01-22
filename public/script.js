@@ -139,7 +139,9 @@ function formatWithCommas(numberString) {
 }
 
 function replaceDotWithComma(value) {
-    return value.replace(/\./g, ',');
+    // Đảm bảo giá trị là chuỗi
+    if (value === undefined || value === null) return ''; // Xử lý trường hợp giá trị null hoặc undefined
+    return String(value).replace(/\./g, ',');
 }
 
 // Function to hide rows with empty maHatnhua values
