@@ -139,10 +139,18 @@ function formatWithCommas(numberString) {
 }
 
 function replaceDotWithComma(value) {
-    // Đảm bảo giá trị là chuỗi
-    if (value === undefined || value === null) return ''; // Xử lý trường hợp giá trị null hoặc undefined
-    return String(value).replace(/\./g, ',');
+    if (value === undefined || value === null) return '';
+
+    // Chuyển giá trị thành số (nếu chưa phải)
+    const numberValue = parseFloat(value);
+
+    // Làm tròn số thập phân đến 2 chữ số
+    const roundedValue = numberValue.toFixed(2);
+
+    // Thay đổi dấu chấm thành dấu phẩy
+    return roundedValue.replace('.', ',');
 }
+
 
 // Function to hide rows with empty maHatnhua values
 function hideEmptyRows() {
@@ -536,8 +544,7 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     parseFloat(orderDetails.socanHN4_maPhePB || 0);
 
                 const tongSocanPhanbo =
-                    tongSocanHatnhua1 + tongSocanHatnhua2 + tongSocanHatnhua3 + tongSocanHatnhua4 +
-                    tongSocanThanhpham1 + tongSocanThanhpham2 + tongSocanThanhpham3 + tongSocanThanhpham4 + tongSocanThanhpham5 + tongSocanThanhpham6 + tongSocanThanhpham7 + tongSocanThanhpham8 + tongSocanTaiche + tongSocanPhe
+                    tongSocanHatnhua1 + tongSocanHatnhua2 + tongSocanHatnhua3 + tongSocanHatnhua4
 
                 // Cập nhật vào orderDetails
                 orderDetails.tongSocanHatnhua1 = tongSocanHatnhua1;
