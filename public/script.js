@@ -138,6 +138,10 @@ function formatWithCommas(numberString) {
     return parseFloat(num).toLocaleString('it-IT');
 }
 
+function replaceDotWithComma(value) {
+    return value.replace(/\./g, ',');
+}
+
 // Function to hide rows with empty maHatnhua values
 function hideEmptyRows() {
     const maxRows = 4; // Số dòng tối đa
@@ -527,7 +531,7 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('socanHN3_maPhePB').textContent = formatWithCommas(orderDetails.socanHN3_maPhePB);
                 document.getElementById('socanHN4_maPhePB').textContent = formatWithCommas(orderDetails.socanHN4_maPhePB);
 
-                document.getElementById('tongSocanHatnhua1').textContent = orderDetails.tongSocanHatnhua1;
+                document.getElementById('tongSocanHatnhua1').textContent = replaceDotWithComma(orderDetails.tongSocanHatnhua1);
 
                 // Gọi hàm ẩn các dòng trống
                 hideEmptyRows();
