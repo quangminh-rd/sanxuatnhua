@@ -816,7 +816,7 @@ function displayDetailData(orderItems) {
                 <th class="borderedcol-4">Tỷ trọng TT<br>(g/cái)</th>
                 <th class="borderedcol-5">Tỷ trọng KH<br>(g/cái)</th>
                 <th class="borderedcol-6">Chênh Tỷ trọng<br>(g/cái)</th>
-                <th class="borderedcol-7">Chênh TL<br>(kg)</th>
+                <th class="borderedcol-7">Tỷ lệ chênh<br>(%)</th>
             </tr>
         `;
 
@@ -825,10 +825,10 @@ function displayDetailData(orderItems) {
         rows.forEach(rowData => {
             if (rowData.ma) { // Kiểm tra giá trị không trống
                 const chenhTytrong = parseFloat(rowData.tytrong || 0) - parseFloat(rowData.tytrongKH || 0); // Tính chênh lệch tỷ trọng
-                const chenhTrongluong = (parseFloat(rowData.tytrong || 0) - parseFloat(rowData.tytrongKH || 0)) * parseFloat(rowData.soluong || 0) / 1000; // Tính chênh lệch trọng lượng
+                const tyleChenhTytrong = (parseFloat(rowData.tytrong || 0) - parseFloat(rowData.tytrongKH || 0)) / parseFloat(rowData.tytrongKH || 0) * 100; // Tính tỷ lệ chênh lệch tỷ trọng
                 // Kiểm tra nếu chênh lệch bằng 0 thì trả về ''
                 const chenhTytrongDisplay = chenhTytrong === 0 ? '' : chenhTytrong.toFixed(3);
-                const chenhTrongluongDisplay = chenhTrongluong === 0 ? '' : chenhTrongluong.toFixed(3);
+                const tyleChenhTytrongDisplay = tyleChenhTytrong === 0 ? '' : tyleChenhTytrong.toFixed(3);
                 tableRows += `
                     <tr class="bordered-table">
                         <td class="borderedcol-1">${rowData.ma}</td>
@@ -837,7 +837,7 @@ function displayDetailData(orderItems) {
                         <td class="borderedcol-4">${formatWithCommas(rowData.tytrong)}</td>
                         <td class="borderedcol-5">${formatWithCommas(rowData.tytrongKH)}</td>
                         <td class="borderedcol-6">${formatWithCommas(chenhTytrongDisplay)}</td>
-                        <td class="borderedcol-7">${formatWithCommas(chenhTrongluongDisplay)}</td>
+                        <td class="borderedcol-7">${formatWithCommas(tyleChenhTytrongDisplay)}</td>
                     </tr>
                 `;
 
