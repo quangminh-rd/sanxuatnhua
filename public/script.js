@@ -579,19 +579,19 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('tyleHaohutDm').textContent = formatWithCommas(orderDetails.tyleHaohutDm);
                 document.getElementById('chenhlechHaohut').textContent = formatWithCommas(orderDetails.chenhlechHaohut);
                 document.getElementById('maHatnhua1_row1').textContent = orderDetails.maHatnhua1;
-                document.getElementById('maHatnhua1_row2').textContent = orderDetails.maHatnhua1;
+                document.getElementById('maHatnhua1_row1.1').textContent = orderDetails.maHatnhua1;
                 document.getElementById('tenHatnhua1').textContent = orderDetails.tenHatnhua1; // Thêm phần này
                 document.getElementById('socanHatnhua1').textContent = formatWithCommas(orderDetails.socanHatnhua1);
-                document.getElementById('maHatnhua2_row1').textContent = orderDetails.maHatnhua2;
                 document.getElementById('maHatnhua2_row2').textContent = orderDetails.maHatnhua2;
+                document.getElementById('maHatnhua2_row2.1').textContent = orderDetails.maHatnhua2;
                 document.getElementById('tenHatnhua2').textContent = orderDetails.tenHatnhua2; // Thêm phần này
                 document.getElementById('socanHatnhua2').textContent = formatWithCommas(orderDetails.socanHatnhua2);
-                document.getElementById('maHatnhua3_row1').textContent = orderDetails.maHatnhua3;
-                document.getElementById('maHatnhua3_row2').textContent = orderDetails.maHatnhua3;
+                document.getElementById('maHatnhua3_row3').textContent = orderDetails.maHatnhua3;
+                document.getElementById('maHatnhua3_row3.1').textContent = orderDetails.maHatnhua3;
                 document.getElementById('tenHatnhua3').textContent = orderDetails.tenHatnhua3; // Thêm phần này
                 document.getElementById('socanHatnhua3').textContent = formatWithCommas(orderDetails.socanHatnhua3);
-                document.getElementById('maHatnhua4_row1').textContent = orderDetails.maHatnhua4;
-                document.getElementById('maHatnhua4_row2').textContent = orderDetails.maHatnhua4;
+                document.getElementById('maHatnhua4_row4').textContent = orderDetails.maHatnhua4;
+                document.getElementById('maHatnhua4_row4.1').textContent = orderDetails.maHatnhua4;
                 document.getElementById('tenHatnhua4').textContent = orderDetails.tenHatnhua4; // Thêm phần này
                 document.getElementById('socanHatnhua4').textContent = formatWithCommas(orderDetails.socanHatnhua4);
 
@@ -807,18 +807,18 @@ function displayDetailData(orderItems) {
         ];
 
         let tableRows = `
-            <p style="white-space: nowrap;"><b>Lần nhập: ${item.lanNhapkho || ''}</b></p>
-            <p style="white-space: nowrap;">  - Ngày nhập: ${formatDate(item.ngayNhap) || ''}</p>
-            <tr class="bordered-table">
-                <th class="borderedcol-1-H">Mã thành phẩm</th>
-                <th class="borderedcol-2">TL nhập<br>(kg)</th>
-                <th class="borderedcol-3">SL nhập<br>(cái)</th>
-                <th class="borderedcol-4">Tỷ trọng TT<br>(g/cái)</th>
-                <th class="borderedcol-5">Tỷ trọng KH<br>(g/cái)</th>
-                <th class="borderedcol-6">Chênh Tỷ trọng<br>(g/cái)</th>
-                <th class="borderedcol-7">Tỷ lệ chênh<br>(%)</th>
-            </tr>
-        `;
+        <p style="white-space: nowrap;"><b>Lần nhập: ${item.lanNhapkho || ''}</b></p>
+        <p style="white-space: nowrap;">  - Ngày nhập: ${formatDate(item.ngayNhap) || ''}</p>
+        <tr class="bordered-table">
+            <th class="borderedcol-1-H">Mã thành phẩm</th>
+            <th class="borderedcol-2">TL nhập<br>(kg)</th>
+            <th class="borderedcol-3">SL nhập<br>(cái)</th>
+            <th class="borderedcol-4">Tỷ trọng TT<br>(g/cái)</th>
+            <th class="borderedcol-5">Tỷ trọng KH<br>(g/cái)</th>
+            <th class="borderedcol-6">Chênh Tỷ trọng<br>(g/cái)</th>
+            <th class="borderedcol-7">Tỷ lệ chênh<br>(%)</th>
+        </tr>
+    `;
 
         let totalTrongluong = 0; // Khởi tạo biến tổng trọng lượng
 
@@ -830,16 +830,16 @@ function displayDetailData(orderItems) {
                 const chenhTytrongDisplay = chenhTytrong === 0 ? '' : chenhTytrong.toFixed(3);
                 const tyleChenhTytrongDisplay = tyleChenhTytrong === 0 ? '' : tyleChenhTytrong.toFixed(3);
                 tableRows += `
-                    <tr class="bordered-table">
-                        <td class="borderedcol-1">${rowData.ma}</td>
-                        <td class="borderedcol-2">${formatWithCommas(rowData.trongluong)}</td>
-                        <td class="borderedcol-3">${rowData.soluong}</td>
-                        <td class="borderedcol-4">${formatWithCommas(rowData.tytrong)}</td>
-                        <td class="borderedcol-5">${formatWithCommas(rowData.tytrongKH)}</td>
-                        <td class="borderedcol-6">${formatWithCommas(chenhTytrongDisplay)}</td>
-                        <td class="borderedcol-7">${formatWithCommas(tyleChenhTytrongDisplay)}</td>
-                    </tr>
-                `;
+                <tr class="bordered-table">
+                    <td class="borderedcol-1">${rowData.ma}</td>
+                    <td class="borderedcol-2">${formatWithCommas(rowData.trongluong)}</td>
+                    <td class="borderedcol-3">${rowData.soluong}</td>
+                    <td class="borderedcol-4">${formatWithCommas(rowData.tytrong)}</td>
+                    <td class="borderedcol-5">${formatWithCommas(rowData.tytrongKH)}</td>
+                    <td class="borderedcol-6">${formatWithCommas(chenhTytrongDisplay)}</td>
+                    <td class="borderedcol-7">${formatWithCommas(tyleChenhTytrongDisplay)}</td>
+                </tr>
+            `;
 
                 // Cộng dồn trọng lượng vào tổng
                 totalTrongluong += parseFloat(rowData.trongluong) || 0;
@@ -848,16 +848,16 @@ function displayDetailData(orderItems) {
 
         // Thêm dòng tổng trọng lượng
         tableRows += `
-            <tr class="bordered-table">
-                <td class="borderedcol-1"><b>Tổng</b></td>
-                <td class="borderedcol-2"><b>${formatWithCommas(totalTrongluong.toFixed(3))}</b></td>
-                <td class="borderedcol-3"></td>
-                <td class="borderedcol-4"></td>
-                <td class="borderedcol-5"></td>
-                <td class="borderedcol-6"></td>
-                <td class="borderedcol-7"></td>
-            </tr>
-        `;
+        <tr class="bordered-table">
+            <td class="borderedcol-1"><b>Tổng</b></td>
+            <td class="borderedcol-2"><b>${formatWithCommas(totalTrongluong.toFixed(3))}</b></td>
+            <td class="borderedcol-3"></td>
+            <td class="borderedcol-4"></td>
+            <td class="borderedcol-5"></td>
+            <td class="borderedcol-6"></td>
+            <td class="borderedcol-7"></td>
+        </tr>
+    `;
 
         tableBody.innerHTML += tableRows;
     });
