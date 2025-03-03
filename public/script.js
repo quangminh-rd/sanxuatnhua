@@ -807,39 +807,39 @@ function displayDetailData(orderItems) {
         ];
 
         let tableRows = `
-        <p style="white-space: nowrap;"><b>Lần nhập: ${item.lanNhapkho || ''}</b></p>
-        <p style="white-space: nowrap;">  - Ngày nhập: ${formatDate(item.ngayNhap) || ''}</p>
-        <tr class="bordered-table">
-            <th class="borderedcol-1-H">Mã thành phẩm</th>
-            <th class="borderedcol-2">TL nhập<br>(kg)</th>
-            <th class="borderedcol-3">SL nhập<br>(cái)</th>
-            <th class="borderedcol-4">Tỷ trọng TT<br>(g/cái)</th>
-            <th class="borderedcol-5">Tỷ trọng KH<br>(g/cái)</th>
-            <th class="borderedcol-6">Chênh Tỷ trọng<br>(g/cái)</th>
-            <th class="borderedcol-7">Tỷ lệ chênh<br>(%)</th>
-        </tr>
-    `;
+    <p style="white-space: nowrap;"><b>Lần nhập: ${item.lanNhapkho || ''}</b></p>
+    <p style="white-space: nowrap;">  - Ngày nhập: ${formatDate(item.ngayNhap) || ''}</p>
+    <tr class="bordered-table">
+        <th class="borderedcol-1-H">Mã thành phẩm</th>
+        <th class="borderedcol-2">TL nhập<br>(kg)</th>
+        <th class="borderedcol-3">SL nhập<br>(cái)</th>
+        <th class="borderedcol-4">Tỷ trọng TT<br>(g/cái)</th>
+        <th class="borderedcol-5">Tỷ trọng KH<br>(g/cái)</th>
+        <th class="borderedcol-6">Chênh Tỷ trọng<br>(g/cái)</th>
+        <th class="borderedcol-7">Tỷ lệ chênh<br>(%)</th>
+    </tr>
+`;
 
         let totalTrongluong = 0; // Khởi tạo biến tổng trọng lượng
 
         rows.forEach(rowData => {
             if (rowData.ma) { // Kiểm tra giá trị không trống
                 const chenhTytrong = parseFloat(rowData.tytrong || 0) - parseFloat(rowData.tytrongKH || 0); // Tính chênh lệch tỷ trọng
-                const tyleChenhTytrong = (parseFloat(rowData.tytrong || 0) - parseFloat(rowData.tytrongKH || 0)) / parseFloat(rowData.tytrongKH || 0) * 100; // Tính tỷ lệ chênh lệch tỷ trọng
+                const tyleChenhTytrong = (parseFloat(rowData.tytrong || 0) - parseFloat(rowData.tytrongKH || 0)) / parseFloat(rowData.tytrongKH || 0) * 100 || 0; // Tính tỷ lệ chênh lệch tỷ trọng
                 // Kiểm tra nếu chênh lệch bằng 0 thì trả về ''
                 const chenhTytrongDisplay = chenhTytrong === 0 ? '' : chenhTytrong.toFixed(3);
                 const tyleChenhTytrongDisplay = tyleChenhTytrong === 0 ? '' : tyleChenhTytrong.toFixed(3);
                 tableRows += `
-                <tr class="bordered-table">
-                    <td class="borderedcol-1">${rowData.ma}</td>
-                    <td class="borderedcol-2">${formatWithCommas(rowData.trongluong)}</td>
-                    <td class="borderedcol-3">${rowData.soluong}</td>
-                    <td class="borderedcol-4">${formatWithCommas(rowData.tytrong)}</td>
-                    <td class="borderedcol-5">${formatWithCommas(rowData.tytrongKH)}</td>
-                    <td class="borderedcol-6">${formatWithCommas(chenhTytrongDisplay)}</td>
-                    <td class="borderedcol-7">${formatWithCommas(tyleChenhTytrongDisplay)}</td>
-                </tr>
-            `;
+            <tr class="bordered-table">
+                <td class="borderedcol-1">${rowData.ma}</td>
+                <td class="borderedcol-2">${formatWithCommas(rowData.trongluong)}</td>
+                <td class="borderedcol-3">${rowData.soluong}</td>
+                <td class="borderedcol-4">${formatWithCommas(rowData.tytrong)}</td>
+                <td class="borderedcol-5">${formatWithCommas(rowData.tytrongKH)}</td>
+                <td class="borderedcol-6">${formatWithCommas(chenhTytrongDisplay)}</td>
+                <td class="borderedcol-7">${formatWithCommas(tyleChenhTytrongDisplay)}</td>
+            </tr>
+        `;
 
                 // Cộng dồn trọng lượng vào tổng
                 totalTrongluong += parseFloat(rowData.trongluong) || 0;
@@ -848,16 +848,16 @@ function displayDetailData(orderItems) {
 
         // Thêm dòng tổng trọng lượng
         tableRows += `
-        <tr class="bordered-table">
-            <td class="borderedcol-1"><b>Tổng</b></td>
-            <td class="borderedcol-2"><b>${formatWithCommas(totalTrongluong.toFixed(3))}</b></td>
-            <td class="borderedcol-3"></td>
-            <td class="borderedcol-4"></td>
-            <td class="borderedcol-5"></td>
-            <td class="borderedcol-6"></td>
-            <td class="borderedcol-7"></td>
-        </tr>
-    `;
+    <tr class="bordered-table">
+        <td class="borderedcol-1"><b>Tổng</b></td>
+        <td class="borderedcol-2"><b>${formatWithCommas(totalTrongluong.toFixed(3))}</b></td>
+        <td class="borderedcol-3"></td>
+        <td class="borderedcol-4"></td>
+        <td class="borderedcol-5"></td>
+        <td class="borderedcol-6"></td>
+        <td class="borderedcol-7"></td>
+    </tr>
+`;
 
         tableBody.innerHTML += tableRows;
     });
