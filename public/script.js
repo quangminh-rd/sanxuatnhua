@@ -213,6 +213,23 @@ function hideEmptyRowsSliceHH() {
     }
 }
 
+// Function to hide rows with empty maThanhphamPB values
+function hideEmptyRowsSliceT() {
+    const maxRows = 8; // Tổng số dòng cần kiểm tra (từ row1 đến row8)
+
+    for (let rowIndex = 1; rowIndex <= maxRows; rowIndex++) {
+        const row = document.getElementById(`rowSliceT${rowIndex}`);
+        const maThanhpham = document.getElementById(`maThanhphamPBHH${rowIndex}`);
+
+        // Kiểm tra nếu maThanhpham tồn tại và giá trị của nó là trống hoặc "Đang tải..."
+        if (maThanhpham && (maThanhpham.textContent.trim() === '' || maThanhpham.textContent.trim() === 'Đang tải...')) {
+            row.style.display = 'none'; // Ẩn hàng
+        } else {
+            row.style.display = ''; // Hiển thị hàng nếu có dữ liệu
+        }
+    }
+}
+
 function formatDate(dateString) {
     if (!dateString) return ''; // Kiểm tra nếu giá trị null hoặc undefined
     const date = new Date(dateString);
@@ -493,6 +510,167 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 orderDetails.tenHatnhua3 = await findHatnhuaName(orderDetails.maHatnhua3);
                 orderDetails.tenHatnhua4 = await findHatnhuaName(orderDetails.maHatnhua4);
 
+
+                const socanHN1_maThanhphamPBT1 =
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB1 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPBHH1 || 0);
+
+                const socanHN2_maThanhphamPBT1 =
+                    parseFloat(orderDetails.socanHN2_maThanhphamPB1 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPBHH1 || 0);
+
+                const socanHN3_maThanhphamPBT1 =
+                    parseFloat(orderDetails.socanHN3_maThanhphamPB1 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPBHH1 || 0);
+
+                const socanHN4_maThanhphamPBT1 =
+                    parseFloat(orderDetails.socanHN4_maThanhphamPB1 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPBHH1 || 0);
+
+                const socanHN1_maThanhphamPBT2 =
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB2 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPBHH2 || 0);
+
+                const socanHN2_maThanhphamPBT2 =
+                    parseFloat(orderDetails.socanHN2_maThanhphamPB2 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPBHH2 || 0);
+
+                const socanHN3_maThanhphamPBT2 =
+                    parseFloat(orderDetails.socanHN3_maThanhphamPB3 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPBHH3 || 0);
+
+                const socanHN4_maThanhphamPBT2 =
+                    parseFloat(orderDetails.socanHN4_maThanhphamPB4 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPBHH4 || 0);
+
+                const socanHN1_maThanhphamPBT3 =
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB3 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPBHH3 || 0);
+
+                const socanHN2_maThanhphamPBT3 =
+                    parseFloat(orderDetails.socanHN2_maThanhphamPB3 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPBHH3 || 0);
+
+                const socanHN3_maThanhphamPBT3 =
+                    parseFloat(orderDetails.socanHN3_maThanhphamPB3 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPBHH3 || 0);
+
+                const socanHN4_maThanhphamPBT3 =
+                    parseFloat(orderDetails.socanHN4_maThanhphamPB3 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPBHH3 || 0);
+
+                const socanHN1_maThanhphamPBT4 =
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB4 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPBHH4 || 0);
+
+                const socanHN2_maThanhphamPBT4 =
+                    parseFloat(orderDetails.socanHN2_maThanhphamPB4 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPBHH4 || 0);
+
+                const socanHN3_maThanhphamPBT4 =
+                    parseFloat(orderDetails.socanHN3_maThanhphamPB4 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPBHH4 || 0);
+
+                const socanHN4_maThanhphamPBT4 =
+                    parseFloat(orderDetails.socanHN4_maThanhphamPB4 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPBHH4 || 0);
+
+                const socanHN1_maThanhphamPBT5 =
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB5 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPBHH5 || 0);
+
+                const socanHN2_maThanhphamPBT5 =
+                    parseFloat(orderDetails.socanHN2_maThanhphamPB5 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPBHH5 || 0);
+
+                const socanHN3_maThanhphamPBT5 =
+                    parseFloat(orderDetails.socanHN3_maThanhphamPB5 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPBHH5 || 0);
+
+                const socanHN4_maThanhphamPBT5 =
+                    parseFloat(orderDetails.socanHN4_maThanhphamPB5 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPBHH5 || 0);
+
+                const socanHN1_maThanhphamPBT6 =
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB6 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPBHH6 || 0);
+
+                const socanHN2_maThanhphamPBT6 =
+                    parseFloat(orderDetails.socanHN2_maThanhphamPB6 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPBHH6 || 0);
+
+                const socanHN3_maThanhphamPBT6 =
+                    parseFloat(orderDetails.socanHN3_maThanhphamPB6 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPBHH6 || 0);
+
+                const socanHN4_maThanhphamPBT6 =
+                    parseFloat(orderDetails.socanHN4_maThanhphamPB6 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPBHH6 || 0);
+
+                const socanHN1_maThanhphamPBT7 =
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB7 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPBHH7 || 0);
+
+                const socanHN2_maThanhphamPBT7 =
+                    parseFloat(orderDetails.socanHN2_maThanhphamPB7 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPBHH7 || 0);
+
+                const socanHN3_maThanhphamPBT7 =
+                    parseFloat(orderDetails.socanHN3_maThanhphamPB7 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPBHH7 || 0);
+
+                const socanHN4_maThanhphamPBT7 =
+                    parseFloat(orderDetails.socanHN4_maThanhphamPB7 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPBHH7 || 0);
+
+                const socanHN1_maThanhphamPBT8 =
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB8 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPBHH8 || 0);
+
+                const socanHN2_maThanhphamPBT8 =
+                    parseFloat(orderDetails.socanHN2_maThanhphamPB8 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPBHH8 || 0);
+
+                const socanHN3_maThanhphamPBT8 =
+                    parseFloat(orderDetails.socanHN3_maThanhphamPB8 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPBHH8 || 0);
+
+                const socanHN4_maThanhphamPBT8 =
+                    parseFloat(orderDetails.socanHN4_maThanhphamPB8 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPBHH8 || 0);
+
+                const socanHN1_maTaichePBT =
+                    parseFloat(orderDetails.socanHN1_maTaichePB || 0) +
+                    parseFloat(orderDetails.socanHN1_maTaichePBHH || 0);
+
+                const socanHN2_maTaichePBT =
+                    parseFloat(orderDetails.socanHN2_maTaichePB || 0) +
+                    parseFloat(orderDetails.socanHN2_maTaichePBHH || 0);
+
+                const socanHN3_maTaichePBT =
+                    parseFloat(orderDetails.socanHN3_maTaichePB || 0) +
+                    parseFloat(orderDetails.socanHN3_maTaichePBHH || 0);
+
+                const socanHN4_maTaichePBT =
+                    parseFloat(orderDetails.socanHN4_maTaichePB || 0) +
+                    parseFloat(orderDetails.socanHN4_maTaichePBHH || 0);
+
+                const socanHN1_maPhePBT =
+                    parseFloat(orderDetails.socanHN1_maPhePB || 0) +
+                    parseFloat(orderDetails.socanHN1_maPhePBHH || 0);
+
+                const socanHN2_maPhePBT =
+                    parseFloat(orderDetails.socanHN2_maPhePB || 0) +
+                    parseFloat(orderDetails.socanHN2_maPhePBHH || 0);
+
+                const socanHN3_maPhePBT =
+                    parseFloat(orderDetails.socanHN3_maPhePB || 0) +
+                    parseFloat(orderDetails.socanHN3_maPhePBHH || 0);
+
+                const socanHN4_maPhePBT =
+                    parseFloat(orderDetails.socanHN4_maPhePB || 0) +
+                    parseFloat(orderDetails.socanHN4_maPhePBHH || 0);
+
                 const tongSocanHatnhua1 =
                     parseFloat(orderDetails.socanHN1_maThanhphamPB1 || 0) +
                     parseFloat(orderDetails.socanHN1_maThanhphamPB2 || 0) +
@@ -578,6 +756,94 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     parseFloat(orderDetails.socanHN3_maPhePBHH || 0);
 
                 const tongSocanHatnhua4HH =
+                    parseFloat(orderDetails.socanHN4_maThanhphamPBHH1 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPBHH2 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPBHH3 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPBHH4 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPBHH5 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPBHH6 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPBHH7 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPBHH8 || 0) +
+                    parseFloat(orderDetails.socanHN4_maTaichePBHH || 0) +
+                    parseFloat(orderDetails.socanHN4_maPhePBHH || 0);
+
+                const tongSocanHatnhua1T =
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB1 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB2 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB3 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB4 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB5 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB6 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB7 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB8 || 0) +
+                    parseFloat(orderDetails.socanHN1_maTaichePB || 0) +
+                    parseFloat(orderDetails.socanHN1_maPhePB || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPBHH1 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPBHH2 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPBHH3 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPBHH4 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPBHH5 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPBHH6 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPBHH7 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPBHH8 || 0) +
+                    parseFloat(orderDetails.socanHN1_maTaichePBHH || 0) +
+                    parseFloat(orderDetails.socanHN1_maPhePBHH || 0);
+
+                const tongSocanHatnhua2T =
+                    parseFloat(orderDetails.socanHN2_maThanhphamPB1 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPB2 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPB3 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPB4 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPB5 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPB6 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPB7 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPB8 || 0) +
+                    parseFloat(orderDetails.socanHN2_maTaichePB || 0) +
+                    parseFloat(orderDetails.socanHN2_maPhePB || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPBHH1 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPBHH2 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPBHH3 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPBHH4 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPBHH5 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPBHH6 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPBHH7 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPBHH8 || 0) +
+                    parseFloat(orderDetails.socanHN2_maTaichePBHH || 0) +
+                    parseFloat(orderDetails.socanHN2_maPhePBHH || 0);
+
+                const tongSocanHatnhua3T =
+                    parseFloat(orderDetails.socanHN3_maThanhphamPB1 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPB2 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPB3 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPB4 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPB5 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPB6 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPB7 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPB8 || 0) +
+                    parseFloat(orderDetails.socanHN3_maTaichePB || 0) +
+                    parseFloat(orderDetails.socanHN3_maPhePB || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPBHH1 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPBHH2 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPBHH3 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPBHH4 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPBHH5 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPBHH6 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPBHH7 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPBHH8 || 0) +
+                    parseFloat(orderDetails.socanHN3_maTaichePBHH || 0) +
+                    parseFloat(orderDetails.socanHN3_maPhePBHH || 0);
+
+                const tongSocanHatnhua4T =
+                    parseFloat(orderDetails.socanHN4_maThanhphamPB1 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPB2 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPB3 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPB4 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPB5 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPB6 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPB7 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPB8 || 0) +
+                    parseFloat(orderDetails.socanHN4_maTaichePB || 0) +
+                    parseFloat(orderDetails.socanHN4_maPhePB || 0) +
                     parseFloat(orderDetails.socanHN4_maThanhphamPBHH1 || 0) +
                     parseFloat(orderDetails.socanHN4_maThanhphamPBHH2 || 0) +
                     parseFloat(orderDetails.socanHN4_maThanhphamPBHH3 || 0) +
@@ -709,6 +975,106 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     parseFloat(orderDetails.socanHN3_maPhePBHH || 0) +
                     parseFloat(orderDetails.socanHN4_maPhePBHH || 0);
 
+                const tongSocanThanhphamT1 =
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB1 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPB1 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPB1 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPB1 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPBHH1 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPBHH1 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPBHH1 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPBHH1 || 0);
+
+                const tongSocanThanhphamT2 =
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB2 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPB2 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPB2 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPB2 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPBHH2 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPBHH2 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPBHH2 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPBHH2 || 0);
+
+                const tongSocanThanhphamT3 =
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB3 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPB3 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPB3 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPB3 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPBHH3 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPBHH3 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPBHH3 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPBHH3 || 0);
+
+                const tongSocanThanhphamT4 =
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB4 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPB4 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPB4 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPB4 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPBHH4 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPBHH4 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPBHH4 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPBHH4 || 0);
+
+                const tongSocanThanhphamT5 =
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB5 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPB5 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPB5 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPB5 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPBHH5 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPBHH5 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPBHH5 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPBHH5 || 0);
+
+                const tongSocanThanhphamT6 =
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB6 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPB6 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPB6 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPB6 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPBHH6 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPBHH6 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPBHH6 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPBHH6 || 0);
+
+                const tongSocanThanhphamT7 =
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB7 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPB7 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPB7 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPB7 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPBHH7 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPBHH7 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPBHH7 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPBHH7 || 0);
+
+                const tongSocanThanhphamT8 =
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB8 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPB8 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPB8 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPB8 || 0) +
+                    parseFloat(orderDetails.socanHN1_maThanhphamPBHH8 || 0) +
+                    parseFloat(orderDetails.socanHN2_maThanhphamPBHH8 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPBHH8 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPBHH8 || 0);
+
+                const tongSocanTaicheT =
+                    parseFloat(orderDetails.socanHN1_maTaichePB || 0) +
+                    parseFloat(orderDetails.socanHN2_maTaichePB || 0) +
+                    parseFloat(orderDetails.socanHN3_maTaichePB || 0) +
+                    parseFloat(orderDetails.socanHN4_maTaichePB || 0) +
+                    parseFloat(orderDetails.socanHN1_maTaichePBHH || 0) +
+                    parseFloat(orderDetails.socanHN2_maTaichePBHH || 0) +
+                    parseFloat(orderDetails.socanHN3_maTaichePBHH || 0) +
+                    parseFloat(orderDetails.socanHN4_maTaichePBHH || 0);
+
+                const tongSocanPheT =
+                    parseFloat(orderDetails.socanHN1_maPhePB || 0) +
+                    parseFloat(orderDetails.socanHN2_maPhePB || 0) +
+                    parseFloat(orderDetails.socanHN3_maPhePB || 0) +
+                    parseFloat(orderDetails.socanHN4_maPhePB || 0) +
+                    parseFloat(orderDetails.socanHN1_maPhePBHH || 0) +
+                    parseFloat(orderDetails.socanHN2_maPhePBHH || 0) +
+                    parseFloat(orderDetails.socanHN3_maPhePBHH || 0) +
+                    parseFloat(orderDetails.socanHN4_maPhePBHH || 0);
+
                 const tongSocanPhanbo =
                     tongSocanHatnhua1 + tongSocanHatnhua2 + tongSocanHatnhua3 + tongSocanHatnhua4;
 
@@ -716,7 +1082,61 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     parseFloat(orderDetails.tongTrongluongXuat || 0) -
                     parseFloat(orderDetails.tongTrongluongNhap || 0);
 
+                const tongSocanPhanboT =
+                    tongSocanPhanbo + tongSocanPhanboHH
+
                 // Cập nhật vào orderDetails
+
+                orderDetails.socanHN1_maThanhphamPBT1 = socanHN1_maThanhphamPBT1;
+                orderDetails.socanHN2_maThanhphamPBT1 = socanHN2_maThanhphamPBT1;
+                orderDetails.socanHN3_maThanhphamPBT1 = socanHN3_maThanhphamPBT1;
+                orderDetails.socanHN4_maThanhphamPBT1 = socanHN4_maThanhphamPBT1;
+
+                orderDetails.socanHN1_maThanhphamPBT2 = socanHN1_maThanhphamPBT2;
+                orderDetails.socanHN2_maThanhphamPBT2 = socanHN2_maThanhphamPBT2;
+                orderDetails.socanHN3_maThanhphamPBT2 = socanHN3_maThanhphamPBT2;
+                orderDetails.socanHN4_maThanhphamPBT2 = socanHN4_maThanhphamPBT2;
+
+                orderDetails.socanHN1_maThanhphamPBT3 = socanHN1_maThanhphamPBT3;
+                orderDetails.socanHN2_maThanhphamPBT3 = socanHN2_maThanhphamPBT3;
+                orderDetails.socanHN3_maThanhphamPBT3 = socanHN3_maThanhphamPBT3;
+                orderDetails.socanHN4_maThanhphamPBT3 = socanHN4_maThanhphamPBT3;
+
+                orderDetails.socanHN1_maThanhphamPBT4 = socanHN1_maThanhphamPBT4;
+                orderDetails.socanHN2_maThanhphamPBT4 = socanHN2_maThanhphamPBT4;
+                orderDetails.socanHN3_maThanhphamPBT4 = socanHN3_maThanhphamPBT4;
+                orderDetails.socanHN4_maThanhphamPBT4 = socanHN4_maThanhphamPBT4;
+
+                orderDetails.socanHN1_maThanhphamPBT5 = socanHN1_maThanhphamPBT5;
+                orderDetails.socanHN2_maThanhphamPBT5 = socanHN2_maThanhphamPBT5;
+                orderDetails.socanHN3_maThanhphamPBT5 = socanHN3_maThanhphamPBT5;
+                orderDetails.socanHN4_maThanhphamPBT5 = socanHN4_maThanhphamPBT5;
+
+                orderDetails.socanHN1_maThanhphamPBT6 = socanHN1_maThanhphamPBT6;
+                orderDetails.socanHN2_maThanhphamPBT6 = socanHN2_maThanhphamPBT6;
+                orderDetails.socanHN3_maThanhphamPBT6 = socanHN3_maThanhphamPBT6;
+                orderDetails.socanHN4_maThanhphamPBT6 = socanHN4_maThanhphamPBT6;
+
+                orderDetails.socanHN1_maThanhphamPBT7 = socanHN1_maThanhphamPBT7;
+                orderDetails.socanHN2_maThanhphamPBT7 = socanHN2_maThanhphamPBT7;
+                orderDetails.socanHN3_maThanhphamPBT7 = socanHN3_maThanhphamPBT7;
+                orderDetails.socanHN4_maThanhphamPBT7 = socanHN4_maThanhphamPBT7;
+
+                orderDetails.socanHN1_maThanhphamPBT8 = socanHN1_maThanhphamPBT8;
+                orderDetails.socanHN2_maThanhphamPBT8 = socanHN2_maThanhphamPBT8;
+                orderDetails.socanHN3_maThanhphamPBT8 = socanHN3_maThanhphamPBT8;
+                orderDetails.socanHN4_maThanhphamPBT8 = socanHN4_maThanhphamPBT8;
+
+                orderDetails.socanHN1_maTaichePBT = socanHN1_maTaichePBT;
+                orderDetails.socanHN2_maTaichePBT = socanHN2_maTaichePBT;
+                orderDetails.socanHN3_maTaichePBT = socanHN3_maTaichePBT;
+                orderDetails.socanHN4_maTaichePBT = socanHN4_maTaichePBT;
+
+                orderDetails.socanHN1_maPhePBT = socanHN1_maPhePBT;
+                orderDetails.socanHN2_maPhePBT = socanHN2_maPhePBT;
+                orderDetails.socanHN3_maPhePBT = socanHN3_maPhePBT;
+                orderDetails.socanHN4_maPhePBT = socanHN4_maPhePBT;
+
                 orderDetails.tongSocanHatnhua1 = tongSocanHatnhua1;
                 orderDetails.tongSocanHatnhua2 = tongSocanHatnhua2;
                 orderDetails.tongSocanHatnhua3 = tongSocanHatnhua3;
@@ -726,6 +1146,11 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 orderDetails.tongSocanHatnhua2HH = tongSocanHatnhua2HH;
                 orderDetails.tongSocanHatnhua3HH = tongSocanHatnhua3HH;
                 orderDetails.tongSocanHatnhua4HH = tongSocanHatnhua4HH;
+
+                orderDetails.tongSocanHatnhua1T = tongSocanHatnhua1T;
+                orderDetails.tongSocanHatnhua2T = tongSocanHatnhua2T;
+                orderDetails.tongSocanHatnhua3T = tongSocanHatnhua3T;
+                orderDetails.tongSocanHatnhua4T = tongSocanHatnhua4T;
 
                 orderDetails.tongSocanThanhpham1 = tongSocanThanhpham1;
                 orderDetails.tongSocanThanhpham2 = tongSocanThanhpham2;
@@ -749,9 +1174,22 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 orderDetails.tongSocanTaicheHH = tongSocanTaicheHH;
                 orderDetails.tongSocanPheHH = tongSocanPheHH;
 
+                orderDetails.tongSocanThanhphamT1 = tongSocanThanhphamT1;
+                orderDetails.tongSocanThanhphamT2 = tongSocanThanhphamT2;
+                orderDetails.tongSocanThanhphamT3 = tongSocanThanhphamT3;
+                orderDetails.tongSocanThanhphamT4 = tongSocanThanhphamT4;
+                orderDetails.tongSocanThanhphamT5 = tongSocanThanhphamT5;
+                orderDetails.tongSocanThanhphamT6 = tongSocanThanhphamT6;
+                orderDetails.tongSocanThanhphamT7 = tongSocanThanhphamT7;
+                orderDetails.tongSocanThanhphamT8 = tongSocanThanhphamT8;
+                orderDetails.tongSocanTaicheT = tongSocanTaicheT;
+                orderDetails.tongSocanPheT = tongSocanPheT;
+
                 orderDetails.tongSocanPhanbo = tongSocanPhanbo;
 
                 orderDetails.tongSocanPhanboHH = tongSocanPhanboHH;
+
+                orderDetails.tongSocanPhanboT = tongSocanPhanboT;
 
                 // Cập nhật nội dung HTML
                 document.getElementById('maLenhsanxuat').textContent = orderDetails.maLenhsanxuat;
@@ -769,26 +1207,31 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('maHatnhua1_row1').textContent = orderDetails.maHatnhua1;
                 document.getElementById('maHatnhua1_row1.1').textContent = orderDetails.maHatnhua1;
                 document.getElementById('maHatnhua1_row1.2').textContent = orderDetails.maHatnhua1;
+                document.getElementById('maHatnhua1_row1.3').textContent = orderDetails.maHatnhua1;
                 document.getElementById('tenHatnhua1').textContent = orderDetails.tenHatnhua1; // Thêm phần này
                 document.getElementById('socanHatnhua1').textContent = formatWithCommas(orderDetails.socanHatnhua1);
                 document.getElementById('maHatnhua2_row2').textContent = orderDetails.maHatnhua2;
                 document.getElementById('maHatnhua2_row2.1').textContent = orderDetails.maHatnhua2;
                 document.getElementById('maHatnhua2_row2.2').textContent = orderDetails.maHatnhua2;
+                document.getElementById('maHatnhua2_row2.3').textContent = orderDetails.maHatnhua2;
                 document.getElementById('tenHatnhua2').textContent = orderDetails.tenHatnhua2; // Thêm phần này
                 document.getElementById('socanHatnhua2').textContent = formatWithCommas(orderDetails.socanHatnhua2);
                 document.getElementById('maHatnhua3_row3').textContent = orderDetails.maHatnhua3;
                 document.getElementById('maHatnhua3_row3.1').textContent = orderDetails.maHatnhua3;
                 document.getElementById('maHatnhua3_row3.2').textContent = orderDetails.maHatnhua3;
+                document.getElementById('maHatnhua3_row3.3').textContent = orderDetails.maHatnhua3;
                 document.getElementById('tenHatnhua3').textContent = orderDetails.tenHatnhua3; // Thêm phần này
                 document.getElementById('socanHatnhua3').textContent = formatWithCommas(orderDetails.socanHatnhua3);
                 document.getElementById('maHatnhua4_row4').textContent = orderDetails.maHatnhua4;
                 document.getElementById('maHatnhua4_row4.1').textContent = orderDetails.maHatnhua4;
                 document.getElementById('maHatnhua4_row4.2').textContent = orderDetails.maHatnhua4;
+                document.getElementById('maHatnhua4_row4.3').textContent = orderDetails.maHatnhua4;
                 document.getElementById('tenHatnhua4').textContent = orderDetails.tenHatnhua4; // Thêm phần này
                 document.getElementById('socanHatnhua4').textContent = formatWithCommas(orderDetails.socanHatnhua4);
 
                 document.getElementById('maThanhphamPB1').textContent = orderDetails.maThanhphamPB1;
                 document.getElementById('maThanhphamPBHH1').textContent = orderDetails.maThanhphamPB1;
+                document.getElementById('maThanhphamPBT1').textContent = orderDetails.maThanhphamPB1;
                 document.getElementById('socanHN1_maThanhphamPB1').textContent = formatWithCommas(orderDetails.socanHN1_maThanhphamPB1);
                 document.getElementById('socanHN2_maThanhphamPB1').textContent = formatWithCommas(orderDetails.socanHN2_maThanhphamPB1);
                 document.getElementById('socanHN3_maThanhphamPB1').textContent = formatWithCommas(orderDetails.socanHN3_maThanhphamPB1);
@@ -799,8 +1242,14 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('socanHN3_maThanhphamPBHH1').textContent = formatWithCommas(orderDetails.socanHN3_maThanhphamPBHH1);
                 document.getElementById('socanHN4_maThanhphamPBHH1').textContent = formatWithCommas(orderDetails.socanHN4_maThanhphamPBHH1);
 
+                document.getElementById('socanHN1_maThanhphamPBT1').textContent = replaceDotWithComma(orderDetails.socanHN1_maThanhphamPBT1);
+                document.getElementById('socanHN2_maThanhphamPBT1').textContent = replaceDotWithComma(orderDetails.socanHN2_maThanhphamPBT1);
+                document.getElementById('socanHN3_maThanhphamPBT1').textContent = replaceDotWithComma(orderDetails.socanHN3_maThanhphamPBT1);
+                document.getElementById('socanHN4_maThanhphamPBT1').textContent = replaceDotWithComma(orderDetails.socanHN4_maThanhphamPBT1);
+
                 document.getElementById('maThanhphamPB2').textContent = orderDetails.maThanhphamPB2;
                 document.getElementById('maThanhphamPBHH2').textContent = orderDetails.maThanhphamPB2;
+                document.getElementById('maThanhphamPBT2').textContent = orderDetails.maThanhphamPB2;
                 document.getElementById('socanHN1_maThanhphamPB2').textContent = formatWithCommas(orderDetails.socanHN1_maThanhphamPB2);
                 document.getElementById('socanHN2_maThanhphamPB2').textContent = formatWithCommas(orderDetails.socanHN2_maThanhphamPB2);
                 document.getElementById('socanHN3_maThanhphamPB2').textContent = formatWithCommas(orderDetails.socanHN3_maThanhphamPB2);
@@ -811,8 +1260,14 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('socanHN3_maThanhphamPBHH2').textContent = formatWithCommas(orderDetails.socanHN3_maThanhphamPBHH2);
                 document.getElementById('socanHN4_maThanhphamPBHH2').textContent = formatWithCommas(orderDetails.socanHN4_maThanhphamPBHH2);
 
+                document.getElementById('socanHN1_maThanhphamPBT2').textContent = replaceDotWithComma(orderDetails.socanHN1_maThanhphamPBT2);
+                document.getElementById('socanHN2_maThanhphamPBT2').textContent = replaceDotWithComma(orderDetails.socanHN2_maThanhphamPBT2);
+                document.getElementById('socanHN3_maThanhphamPBT2').textContent = replaceDotWithComma(orderDetails.socanHN3_maThanhphamPBT2);
+                document.getElementById('socanHN4_maThanhphamPBT2').textContent = replaceDotWithComma(orderDetails.socanHN4_maThanhphamPBT2);
+
                 document.getElementById('maThanhphamPB3').textContent = orderDetails.maThanhphamPB3;
                 document.getElementById('maThanhphamPBHH3').textContent = orderDetails.maThanhphamPB3;
+                document.getElementById('maThanhphamPBT3').textContent = orderDetails.maThanhphamPB3;
                 document.getElementById('socanHN1_maThanhphamPB3').textContent = formatWithCommas(orderDetails.socanHN1_maThanhphamPB3);
                 document.getElementById('socanHN2_maThanhphamPB3').textContent = formatWithCommas(orderDetails.socanHN2_maThanhphamPB3);
                 document.getElementById('socanHN3_maThanhphamPB3').textContent = formatWithCommas(orderDetails.socanHN3_maThanhphamPB3);
@@ -823,8 +1278,14 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('socanHN3_maThanhphamPBHH3').textContent = formatWithCommas(orderDetails.socanHN3_maThanhphamPBHH3);
                 document.getElementById('socanHN4_maThanhphamPBHH3').textContent = formatWithCommas(orderDetails.socanHN4_maThanhphamPBHH3);
 
+                document.getElementById('socanHN1_maThanhphamPBT3').textContent = replaceDotWithComma(orderDetails.socanHN1_maThanhphamPBT3);
+                document.getElementById('socanHN2_maThanhphamPBT3').textContent = replaceDotWithComma(orderDetails.socanHN2_maThanhphamPBT3);
+                document.getElementById('socanHN3_maThanhphamPBT3').textContent = replaceDotWithComma(orderDetails.socanHN3_maThanhphamPBT3);
+                document.getElementById('socanHN4_maThanhphamPBT3').textContent = replaceDotWithComma(orderDetails.socanHN4_maThanhphamPBT3);
+
                 document.getElementById('maThanhphamPB4').textContent = orderDetails.maThanhphamPB4;
                 document.getElementById('maThanhphamPBHH4').textContent = orderDetails.maThanhphamPB4;
+                document.getElementById('maThanhphamPBT4').textContent = orderDetails.maThanhphamPB4;
                 document.getElementById('socanHN1_maThanhphamPB4').textContent = formatWithCommas(orderDetails.socanHN1_maThanhphamPB4);
                 document.getElementById('socanHN2_maThanhphamPB4').textContent = formatWithCommas(orderDetails.socanHN2_maThanhphamPB4);
                 document.getElementById('socanHN3_maThanhphamPB4').textContent = formatWithCommas(orderDetails.socanHN3_maThanhphamPB4);
@@ -835,8 +1296,14 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('socanHN3_maThanhphamPBHH4').textContent = formatWithCommas(orderDetails.socanHN3_maThanhphamPBHH4);
                 document.getElementById('socanHN4_maThanhphamPBHH4').textContent = formatWithCommas(orderDetails.socanHN4_maThanhphamPBHH4);
 
+                document.getElementById('socanHN1_maThanhphamPBT4').textContent = replaceDotWithComma(orderDetails.socanHN1_maThanhphamPBT4);
+                document.getElementById('socanHN2_maThanhphamPBT4').textContent = replaceDotWithComma(orderDetails.socanHN2_maThanhphamPBT4);
+                document.getElementById('socanHN3_maThanhphamPBT4').textContent = replaceDotWithComma(orderDetails.socanHN3_maThanhphamPBT4);
+                document.getElementById('socanHN4_maThanhphamPBT4').textContent = replaceDotWithComma(orderDetails.socanHN4_maThanhphamPBT4);
+
                 document.getElementById('maThanhphamPB5').textContent = orderDetails.maThanhphamPB5;
                 document.getElementById('maThanhphamPBHH5').textContent = orderDetails.maThanhphamPB5;
+                document.getElementById('maThanhphamPBT5').textContent = orderDetails.maThanhphamPB5;
                 document.getElementById('socanHN1_maThanhphamPB5').textContent = formatWithCommas(orderDetails.socanHN1_maThanhphamPB5);
                 document.getElementById('socanHN2_maThanhphamPB5').textContent = formatWithCommas(orderDetails.socanHN2_maThanhphamPB5);
                 document.getElementById('socanHN3_maThanhphamPB5').textContent = formatWithCommas(orderDetails.socanHN3_maThanhphamPB5);
@@ -847,8 +1314,14 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('socanHN3_maThanhphamPBHH5').textContent = formatWithCommas(orderDetails.socanHN3_maThanhphamPBHH5);
                 document.getElementById('socanHN4_maThanhphamPBHH5').textContent = formatWithCommas(orderDetails.socanHN4_maThanhphamPBHH5);
 
+                document.getElementById('socanHN1_maThanhphamPBT5').textContent = replaceDotWithComma(orderDetails.socanHN1_maThanhphamPBT5);
+                document.getElementById('socanHN2_maThanhphamPBT5').textContent = replaceDotWithComma(orderDetails.socanHN2_maThanhphamPBT5);
+                document.getElementById('socanHN3_maThanhphamPBT5').textContent = replaceDotWithComma(orderDetails.socanHN3_maThanhphamPBT5);
+                document.getElementById('socanHN4_maThanhphamPBT5').textContent = replaceDotWithComma(orderDetails.socanHN4_maThanhphamPBT5);
+
                 document.getElementById('maThanhphamPB6').textContent = orderDetails.maThanhphamPB6;
                 document.getElementById('maThanhphamPBHH6').textContent = orderDetails.maThanhphamPB6;
+                document.getElementById('maThanhphamPBT6').textContent = orderDetails.maThanhphamPB6;
                 document.getElementById('socanHN1_maThanhphamPB6').textContent = formatWithCommas(orderDetails.socanHN1_maThanhphamPB6);
                 document.getElementById('socanHN2_maThanhphamPB6').textContent = formatWithCommas(orderDetails.socanHN2_maThanhphamPB6);
                 document.getElementById('socanHN3_maThanhphamPB6').textContent = formatWithCommas(orderDetails.socanHN3_maThanhphamPB6);
@@ -859,8 +1332,14 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('socanHN3_maThanhphamPBHH6').textContent = formatWithCommas(orderDetails.socanHN3_maThanhphamPBHH6);
                 document.getElementById('socanHN4_maThanhphamPBHH6').textContent = formatWithCommas(orderDetails.socanHN4_maThanhphamPBHH6);
 
+                document.getElementById('socanHN1_maThanhphamPBT6').textContent = replaceDotWithComma(orderDetails.socanHN1_maThanhphamPBT6);
+                document.getElementById('socanHN2_maThanhphamPBT6').textContent = replaceDotWithComma(orderDetails.socanHN2_maThanhphamPBT6);
+                document.getElementById('socanHN3_maThanhphamPBT6').textContent = replaceDotWithComma(orderDetails.socanHN3_maThanhphamPBT6);
+                document.getElementById('socanHN4_maThanhphamPBT6').textContent = replaceDotWithComma(orderDetails.socanHN4_maThanhphamPBT6);
+
                 document.getElementById('maThanhphamPB7').textContent = orderDetails.maThanhphamPB7;
                 document.getElementById('maThanhphamPBHH7').textContent = orderDetails.maThanhphamPB7;
+                document.getElementById('maThanhphamPBT7').textContent = orderDetails.maThanhphamPB7;
                 document.getElementById('socanHN1_maThanhphamPB7').textContent = formatWithCommas(orderDetails.socanHN1_maThanhphamPB7);
                 document.getElementById('socanHN2_maThanhphamPB7').textContent = formatWithCommas(orderDetails.socanHN2_maThanhphamPB7);
                 document.getElementById('socanHN3_maThanhphamPB7').textContent = formatWithCommas(orderDetails.socanHN3_maThanhphamPB7);
@@ -871,8 +1350,14 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('socanHN3_maThanhphamPBHH7').textContent = formatWithCommas(orderDetails.socanHN3_maThanhphamPBHH7);
                 document.getElementById('socanHN4_maThanhphamPBHH7').textContent = formatWithCommas(orderDetails.socanHN4_maThanhphamPBHH7);
 
+                document.getElementById('socanHN1_maThanhphamPBT7').textContent = replaceDotWithComma(orderDetails.socanHN1_maThanhphamPBT7);
+                document.getElementById('socanHN2_maThanhphamPBT7').textContent = replaceDotWithComma(orderDetails.socanHN2_maThanhphamPBT7);
+                document.getElementById('socanHN3_maThanhphamPBT7').textContent = replaceDotWithComma(orderDetails.socanHN3_maThanhphamPBT7);
+                document.getElementById('socanHN4_maThanhphamPBT7').textContent = replaceDotWithComma(orderDetails.socanHN4_maThanhphamPBT7);
+
                 document.getElementById('maThanhphamPB8').textContent = orderDetails.maThanhphamPB8;
                 document.getElementById('maThanhphamPBHH8').textContent = orderDetails.maThanhphamPB8;
+                document.getElementById('maThanhphamPBT8').textContent = orderDetails.maThanhphamPB8;
                 document.getElementById('socanHN1_maThanhphamPB8').textContent = formatWithCommas(orderDetails.socanHN1_maThanhphamPB8);
                 document.getElementById('socanHN2_maThanhphamPB8').textContent = formatWithCommas(orderDetails.socanHN2_maThanhphamPB8);
                 document.getElementById('socanHN3_maThanhphamPB8').textContent = formatWithCommas(orderDetails.socanHN3_maThanhphamPB8);
@@ -883,8 +1368,14 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('socanHN3_maThanhphamPBHH8').textContent = formatWithCommas(orderDetails.socanHN3_maThanhphamPBHH8);
                 document.getElementById('socanHN4_maThanhphamPBHH8').textContent = formatWithCommas(orderDetails.socanHN4_maThanhphamPBHH8);
 
+                document.getElementById('socanHN1_maThanhphamPBT8').textContent = replaceDotWithComma(orderDetails.socanHN1_maThanhphamPBT8);
+                document.getElementById('socanHN2_maThanhphamPBT8').textContent = replaceDotWithComma(orderDetails.socanHN2_maThanhphamPBT8);
+                document.getElementById('socanHN3_maThanhphamPBT8').textContent = replaceDotWithComma(orderDetails.socanHN3_maThanhphamPBT8);
+                document.getElementById('socanHN4_maThanhphamPBT8').textContent = replaceDotWithComma(orderDetails.socanHN4_maThanhphamPBT8);
+
                 document.getElementById('maTaichePB').textContent = orderDetails.maTaichePB;
                 document.getElementById('maTaichePB.1').textContent = orderDetails.maTaichePB;
+                document.getElementById('maTaichePB.2').textContent = orderDetails.maTaichePB;
                 document.getElementById('socanHN1_maTaichePB').textContent = formatWithCommas(orderDetails.socanHN1_maTaichePB);
                 document.getElementById('socanHN2_maTaichePB').textContent = formatWithCommas(orderDetails.socanHN2_maTaichePB);
                 document.getElementById('socanHN3_maTaichePB').textContent = formatWithCommas(orderDetails.socanHN3_maTaichePB);
@@ -895,8 +1386,14 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('socanHN3_maTaichePBHH').textContent = formatWithCommas(orderDetails.socanHN3_maTaichePBHH);
                 document.getElementById('socanHN4_maTaichePBHH').textContent = formatWithCommas(orderDetails.socanHN4_maTaichePBHH);
 
+                document.getElementById('socanHN1_maTaichePBT').textContent = replaceDotWithComma(orderDetails.socanHN1_maTaichePBT);
+                document.getElementById('socanHN2_maTaichePBT').textContent = replaceDotWithComma(orderDetails.socanHN2_maTaichePBT);
+                document.getElementById('socanHN3_maTaichePBT').textContent = replaceDotWithComma(orderDetails.socanHN3_maTaichePBT);
+                document.getElementById('socanHN4_maTaichePBT').textContent = replaceDotWithComma(orderDetails.socanHN4_maTaichePBT);
+
                 document.getElementById('maPhePB').textContent = orderDetails.maPhePB;
                 document.getElementById('maPhePB.1').textContent = orderDetails.maPhePB;
+                document.getElementById('maPhePB.2').textContent = orderDetails.maPhePB;
                 document.getElementById('socanHN1_maPhePB').textContent = formatWithCommas(orderDetails.socanHN1_maPhePB);
                 document.getElementById('socanHN2_maPhePB').textContent = formatWithCommas(orderDetails.socanHN2_maPhePB);
                 document.getElementById('socanHN3_maPhePB').textContent = formatWithCommas(orderDetails.socanHN3_maPhePB);
@@ -907,6 +1404,11 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('socanHN3_maPhePBHH').textContent = formatWithCommas(orderDetails.socanHN3_maPhePBHH);
                 document.getElementById('socanHN4_maPhePBHH').textContent = formatWithCommas(orderDetails.socanHN4_maPhePBHH);
 
+                document.getElementById('socanHN1_maPhePBT').textContent = replaceDotWithComma(orderDetails.socanHN1_maPhePBT);
+                document.getElementById('socanHN2_maPhePBT').textContent = replaceDotWithComma(orderDetails.socanHN2_maPhePBT);
+                document.getElementById('socanHN3_maPhePBT').textContent = replaceDotWithComma(orderDetails.socanHN3_maPhePBT);
+                document.getElementById('socanHN4_maPhePBT').textContent = replaceDotWithComma(orderDetails.socanHN4_maPhePBT);
+
                 document.getElementById('tongSocanHatnhua1').textContent = replaceDotWithComma(orderDetails.tongSocanHatnhua1);
                 document.getElementById('tongSocanHatnhua2').textContent = replaceDotWithComma(orderDetails.tongSocanHatnhua2);
                 document.getElementById('tongSocanHatnhua3').textContent = replaceDotWithComma(orderDetails.tongSocanHatnhua3);
@@ -916,6 +1418,11 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('tongSocanHatnhua2HH').textContent = replaceDotWithComma(orderDetails.tongSocanHatnhua2HH);
                 document.getElementById('tongSocanHatnhua3HH').textContent = replaceDotWithComma(orderDetails.tongSocanHatnhua3HH);
                 document.getElementById('tongSocanHatnhua4HH').textContent = replaceDotWithComma(orderDetails.tongSocanHatnhua4HH);
+
+                document.getElementById('tongSocanHatnhua1T').textContent = replaceDotWithComma(orderDetails.tongSocanHatnhua1T);
+                document.getElementById('tongSocanHatnhua2T').textContent = replaceDotWithComma(orderDetails.tongSocanHatnhua2T);
+                document.getElementById('tongSocanHatnhua3T').textContent = replaceDotWithComma(orderDetails.tongSocanHatnhua3T);
+                document.getElementById('tongSocanHatnhua4T').textContent = replaceDotWithComma(orderDetails.tongSocanHatnhua4T);
 
                 document.getElementById('tongSocanThanhpham1').textContent = replaceDotWithComma(orderDetails.tongSocanThanhpham1);
                 document.getElementById('tongSocanThanhpham2').textContent = replaceDotWithComma(orderDetails.tongSocanThanhpham2);
@@ -939,15 +1446,29 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('tongSocanTaicheHH').textContent = replaceDotWithComma(orderDetails.tongSocanTaicheHH);
                 document.getElementById('tongSocanPheHH').textContent = replaceDotWithComma(orderDetails.tongSocanPheHH);
 
+                document.getElementById('tongSocanThanhphamT1').textContent = replaceDotWithComma(orderDetails.tongSocanThanhphamT1);
+                document.getElementById('tongSocanThanhphamT2').textContent = replaceDotWithComma(orderDetails.tongSocanThanhphamT2);
+                document.getElementById('tongSocanThanhphamT3').textContent = replaceDotWithComma(orderDetails.tongSocanThanhphamT3);
+                document.getElementById('tongSocanThanhphamT4').textContent = replaceDotWithComma(orderDetails.tongSocanThanhphamT4);
+                document.getElementById('tongSocanThanhphamT5').textContent = replaceDotWithComma(orderDetails.tongSocanThanhphamT5);
+                document.getElementById('tongSocanThanhphamT6').textContent = replaceDotWithComma(orderDetails.tongSocanThanhphamT6);
+                document.getElementById('tongSocanThanhphamT7').textContent = replaceDotWithComma(orderDetails.tongSocanThanhphamT7);
+                document.getElementById('tongSocanThanhphamT8').textContent = replaceDotWithComma(orderDetails.tongSocanThanhphamT8);
+                document.getElementById('tongSocanTaicheT').textContent = replaceDotWithComma(orderDetails.tongSocanTaicheT);
+                document.getElementById('tongSocanPheT').textContent = replaceDotWithComma(orderDetails.tongSocanPheT);
+
                 document.getElementById('tongSocanPhanbo').textContent = replaceDotWithComma(orderDetails.tongSocanPhanbo);
 
                 document.getElementById('tongSocanPhanboHH').textContent = replaceDotWithComma(orderDetails.tongSocanPhanboHH);
+
+                document.getElementById('tongSocanPhanboT').textContent = replaceDotWithComma(orderDetails.tongSocanPhanboT);
 
 
                 // Gọi hàm ẩn các dòng trống
                 hideEmptyRows();
                 hideEmptyRowsSlice();
                 hideEmptyRowsSliceHH();
+                hideEmptyRowsSliceT();
 
                 return; // Dừng khi tìm thấy
             }
@@ -1081,13 +1602,13 @@ function displayDetailData(orderItems) {
 <p style="white-space: nowrap;"><b>Lần nhập: ${item.lanNhapkho || ''}</b></p>
 <p style="white-space: nowrap;">  - Ngày nhập: ${formatDate(item.ngayNhap) || ''}</p>
 <tr class="bordered-table">
-    <th class="borderedcol-1-H">Mã thành phẩm</th>
-    <th class="borderedcol-2">TL nhập<br>(kg)</th>
-    <th class="borderedcol-3">SL nhập<br>(cái)</th>
-    <th class="borderedcol-4">Tỷ trọng TT<br>(g/cái)</th>
-    <th class="borderedcol-5">Tỷ trọng KH<br>(g/cái)</th>
-    <th class="borderedcol-6">Chênh Tỷ trọng<br>(g/cái)</th>
-    <th class="borderedcol-7">Tỷ lệ chênh<br>(%)</th>
+<th class="borderedcol-1-H">Mã thành phẩm</th>
+<th class="borderedcol-2">TL nhập<br>(kg)</th>
+<th class="borderedcol-3">SL nhập<br>(cái)</th>
+<th class="borderedcol-4">Tỷ trọng TT<br>(g/cái)</th>
+<th class="borderedcol-5">Tỷ trọng KH<br>(g/cái)</th>
+<th class="borderedcol-6">Chênh Tỷ trọng<br>(g/cái)</th>
+<th class="borderedcol-7">Tỷ lệ chênh<br>(%)</th>
 </tr>
 `;
 
@@ -1101,16 +1622,16 @@ function displayDetailData(orderItems) {
                 const chenhTytrongDisplay = chenhTytrong === 0 ? '' : chenhTytrong.toFixed(3);
                 const tyleChenhTytrongDisplay = tyleChenhTytrong === 0 ? '' : tyleChenhTytrong.toFixed(3);
                 tableRows += `
-        <tr class="bordered-table">
-            <td class="borderedcol-1">${rowData.ma}</td>
-            <td class="borderedcol-2">${formatWithCommas(rowData.trongluong)}</td>
-            <td class="borderedcol-3">${rowData.soluong}</td>
-            <td class="borderedcol-4">${formatWithCommas(rowData.tytrong)}</td>
-            <td class="borderedcol-5">${formatWithCommas(rowData.tytrongKH)}</td>
-            <td class="borderedcol-6">${formatWithCommas(chenhTytrongDisplay)}</td>
-            <td class="borderedcol-7">${formatWithCommas(tyleChenhTytrongDisplay)}</td>
-        </tr>
-    `;
+    <tr class="bordered-table">
+        <td class="borderedcol-1">${rowData.ma}</td>
+        <td class="borderedcol-2">${formatWithCommas(rowData.trongluong)}</td>
+        <td class="borderedcol-3">${rowData.soluong}</td>
+        <td class="borderedcol-4">${formatWithCommas(rowData.tytrong)}</td>
+        <td class="borderedcol-5">${formatWithCommas(rowData.tytrongKH)}</td>
+        <td class="borderedcol-6">${formatWithCommas(chenhTytrongDisplay)}</td>
+        <td class="borderedcol-7">${formatWithCommas(tyleChenhTytrongDisplay)}</td>
+    </tr>
+`;
 
                 // Cộng dồn trọng lượng vào tổng
                 totalTrongluong += parseFloat(rowData.trongluong) || 0;
@@ -1120,13 +1641,13 @@ function displayDetailData(orderItems) {
         // Thêm dòng tổng trọng lượng
         tableRows += `
 <tr class="bordered-table">
-    <td class="borderedcol-1"><b>Tổng</b></td>
-    <td class="borderedcol-2"><b>${formatWithCommas(totalTrongluong.toFixed(3))}</b></td>
-    <td class="borderedcol-3"></td>
-    <td class="borderedcol-4"></td>
-    <td class="borderedcol-5"></td>
-    <td class="borderedcol-6"></td>
-    <td class="borderedcol-7"></td>
+<td class="borderedcol-1"><b>Tổng</b></td>
+<td class="borderedcol-2"><b>${formatWithCommas(totalTrongluong.toFixed(3))}</b></td>
+<td class="borderedcol-3"></td>
+<td class="borderedcol-4"></td>
+<td class="borderedcol-5"></td>
+<td class="borderedcol-6"></td>
+<td class="borderedcol-7"></td>
 </tr>
 `;
 
