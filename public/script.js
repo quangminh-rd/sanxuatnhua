@@ -639,38 +639,6 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     parseFloat(orderDetails.socanHN4_maThanhphamPB8 || 0) +
                     parseFloat(orderDetails.socanHN4_maThanhphamPBHH8 || 0);
 
-                const socanHN1_maTaichePBT =
-                    parseFloat(orderDetails.socanHN1_maTaichePB || 0) +
-                    parseFloat(orderDetails.socanHN1_maTaichePBHH || 0);
-
-                const socanHN2_maTaichePBT =
-                    parseFloat(orderDetails.socanHN2_maTaichePB || 0) +
-                    parseFloat(orderDetails.socanHN2_maTaichePBHH || 0);
-
-                const socanHN3_maTaichePBT =
-                    parseFloat(orderDetails.socanHN3_maTaichePB || 0) +
-                    parseFloat(orderDetails.socanHN3_maTaichePBHH || 0);
-
-                const socanHN4_maTaichePBT =
-                    parseFloat(orderDetails.socanHN4_maTaichePB || 0) +
-                    parseFloat(orderDetails.socanHN4_maTaichePBHH || 0);
-
-                const socanHN1_maPhePBT =
-                    parseFloat(orderDetails.socanHN1_maPhePB || 0) +
-                    parseFloat(orderDetails.socanHN1_maPhePBHH || 0);
-
-                const socanHN2_maPhePBT =
-                    parseFloat(orderDetails.socanHN2_maPhePB || 0) +
-                    parseFloat(orderDetails.socanHN2_maPhePBHH || 0);
-
-                const socanHN3_maPhePBT =
-                    parseFloat(orderDetails.socanHN3_maPhePB || 0) +
-                    parseFloat(orderDetails.socanHN3_maPhePBHH || 0);
-
-                const socanHN4_maPhePBT =
-                    parseFloat(orderDetails.socanHN4_maPhePB || 0) +
-                    parseFloat(orderDetails.socanHN4_maPhePBHH || 0);
-
                 const tongSocanHatnhua1 =
                     parseFloat(orderDetails.socanHN1_maThanhphamPB1 || 0) +
                     parseFloat(orderDetails.socanHN1_maThanhphamPB2 || 0) +
@@ -679,9 +647,7 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     parseFloat(orderDetails.socanHN1_maThanhphamPB5 || 0) +
                     parseFloat(orderDetails.socanHN1_maThanhphamPB6 || 0) +
                     parseFloat(orderDetails.socanHN1_maThanhphamPB7 || 0) +
-                    parseFloat(orderDetails.socanHN1_maThanhphamPB8 || 0) +
-                    parseFloat(orderDetails.socanHN1_maTaichePB || 0) +
-                    parseFloat(orderDetails.socanHN1_maPhePB || 0);
+                    parseFloat(orderDetails.socanHN1_maThanhphamPB8 || 0);
 
                 const tongSocanHatnhua2 =
                     parseFloat(orderDetails.socanHN2_maThanhphamPB1 || 0) +
@@ -691,9 +657,7 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     parseFloat(orderDetails.socanHN2_maThanhphamPB5 || 0) +
                     parseFloat(orderDetails.socanHN2_maThanhphamPB6 || 0) +
                     parseFloat(orderDetails.socanHN2_maThanhphamPB7 || 0) +
-                    parseFloat(orderDetails.socanHN2_maThanhphamPB8 || 0) +
-                    parseFloat(orderDetails.socanHN2_maTaichePB || 0) +
-                    parseFloat(orderDetails.socanHN2_maPhePB || 0);
+                    parseFloat(orderDetails.socanHN2_maThanhphamPB8 || 0);
 
                 const tongSocanHatnhua3 =
                     parseFloat(orderDetails.socanHN3_maThanhphamPB1 || 0) +
@@ -703,9 +667,7 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     parseFloat(orderDetails.socanHN3_maThanhphamPB5 || 0) +
                     parseFloat(orderDetails.socanHN3_maThanhphamPB6 || 0) +
                     parseFloat(orderDetails.socanHN3_maThanhphamPB7 || 0) +
-                    parseFloat(orderDetails.socanHN3_maThanhphamPB8 || 0) +
-                    parseFloat(orderDetails.socanHN3_maTaichePB || 0) +
-                    parseFloat(orderDetails.socanHN3_maPhePB || 0);
+                    parseFloat(orderDetails.socanHN3_maThanhphamPB8 || 0);
 
                 const tongSocanHatnhua4 =
                     parseFloat(orderDetails.socanHN4_maThanhphamPB1 || 0) +
@@ -715,9 +677,7 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     parseFloat(orderDetails.socanHN4_maThanhphamPB5 || 0) +
                     parseFloat(orderDetails.socanHN4_maThanhphamPB6 || 0) +
                     parseFloat(orderDetails.socanHN4_maThanhphamPB7 || 0) +
-                    parseFloat(orderDetails.socanHN4_maThanhphamPB8 || 0) +
-                    parseFloat(orderDetails.socanHN4_maTaichePB || 0) +
-                    parseFloat(orderDetails.socanHN4_maPhePB || 0);
+                    parseFloat(orderDetails.socanHN4_maThanhphamPB8 || 0);
 
                 const tongSocanHatnhua1HH =
                     parseFloat(orderDetails.socanHN1_maThanhphamPBHH1 || 0) +
@@ -727,9 +687,7 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     parseFloat(orderDetails.socanHN1_maThanhphamPBHH5 || 0) +
                     parseFloat(orderDetails.socanHN1_maThanhphamPBHH6 || 0) +
                     parseFloat(orderDetails.socanHN1_maThanhphamPBHH7 || 0) +
-                    parseFloat(orderDetails.socanHN1_maThanhphamPBHH8 || 0) +
-                    parseFloat(orderDetails.socanHN1_maTaichePBHH || 0) +
-                    parseFloat(orderDetails.socanHN1_maPhePBHH || 0);
+                    parseFloat(orderDetails.socanHN1_maThanhphamPBHH8 || 0);
 
                 const tongSocanHatnhua2HH =
                     parseFloat(orderDetails.socanHN2_maThanhphamPBHH1 || 0) +
@@ -739,9 +697,7 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     parseFloat(orderDetails.socanHN2_maThanhphamPBHH5 || 0) +
                     parseFloat(orderDetails.socanHN2_maThanhphamPBHH6 || 0) +
                     parseFloat(orderDetails.socanHN2_maThanhphamPBHH7 || 0) +
-                    parseFloat(orderDetails.socanHN2_maThanhphamPBHH8 || 0) +
-                    parseFloat(orderDetails.socanHN2_maTaichePBHH || 0) +
-                    parseFloat(orderDetails.socanHN2_maPhePBHH || 0);
+                    parseFloat(orderDetails.socanHN2_maThanhphamPBHH8 || 0);
 
                 const tongSocanHatnhua3HH =
                     parseFloat(orderDetails.socanHN3_maThanhphamPBHH1 || 0) +
@@ -751,9 +707,7 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     parseFloat(orderDetails.socanHN3_maThanhphamPBHH5 || 0) +
                     parseFloat(orderDetails.socanHN3_maThanhphamPBHH6 || 0) +
                     parseFloat(orderDetails.socanHN3_maThanhphamPBHH7 || 0) +
-                    parseFloat(orderDetails.socanHN3_maThanhphamPBHH8 || 0) +
-                    parseFloat(orderDetails.socanHN3_maTaichePBHH || 0) +
-                    parseFloat(orderDetails.socanHN3_maPhePBHH || 0);
+                    parseFloat(orderDetails.socanHN3_maThanhphamPBHH8 || 0);
 
                 const tongSocanHatnhua4HH =
                     parseFloat(orderDetails.socanHN4_maThanhphamPBHH1 || 0) +
@@ -763,9 +717,7 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     parseFloat(orderDetails.socanHN4_maThanhphamPBHH5 || 0) +
                     parseFloat(orderDetails.socanHN4_maThanhphamPBHH6 || 0) +
                     parseFloat(orderDetails.socanHN4_maThanhphamPBHH7 || 0) +
-                    parseFloat(orderDetails.socanHN4_maThanhphamPBHH8 || 0) +
-                    parseFloat(orderDetails.socanHN4_maTaichePBHH || 0) +
-                    parseFloat(orderDetails.socanHN4_maPhePBHH || 0);
+                    parseFloat(orderDetails.socanHN4_maThanhphamPBHH8 || 0);
 
                 const tongSocanHatnhua1T =
                     parseFloat(orderDetails.socanHN1_maThanhphamPB1 || 0) +
@@ -776,8 +728,6 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     parseFloat(orderDetails.socanHN1_maThanhphamPB6 || 0) +
                     parseFloat(orderDetails.socanHN1_maThanhphamPB7 || 0) +
                     parseFloat(orderDetails.socanHN1_maThanhphamPB8 || 0) +
-                    parseFloat(orderDetails.socanHN1_maTaichePB || 0) +
-                    parseFloat(orderDetails.socanHN1_maPhePB || 0) +
                     parseFloat(orderDetails.socanHN1_maThanhphamPBHH1 || 0) +
                     parseFloat(orderDetails.socanHN1_maThanhphamPBHH2 || 0) +
                     parseFloat(orderDetails.socanHN1_maThanhphamPBHH3 || 0) +
@@ -785,9 +735,7 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     parseFloat(orderDetails.socanHN1_maThanhphamPBHH5 || 0) +
                     parseFloat(orderDetails.socanHN1_maThanhphamPBHH6 || 0) +
                     parseFloat(orderDetails.socanHN1_maThanhphamPBHH7 || 0) +
-                    parseFloat(orderDetails.socanHN1_maThanhphamPBHH8 || 0) +
-                    parseFloat(orderDetails.socanHN1_maTaichePBHH || 0) +
-                    parseFloat(orderDetails.socanHN1_maPhePBHH || 0);
+                    parseFloat(orderDetails.socanHN1_maThanhphamPBHH8 || 0);
 
                 const tongSocanHatnhua2T =
                     parseFloat(orderDetails.socanHN2_maThanhphamPB1 || 0) +
@@ -798,8 +746,6 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     parseFloat(orderDetails.socanHN2_maThanhphamPB6 || 0) +
                     parseFloat(orderDetails.socanHN2_maThanhphamPB7 || 0) +
                     parseFloat(orderDetails.socanHN2_maThanhphamPB8 || 0) +
-                    parseFloat(orderDetails.socanHN2_maTaichePB || 0) +
-                    parseFloat(orderDetails.socanHN2_maPhePB || 0) +
                     parseFloat(orderDetails.socanHN2_maThanhphamPBHH1 || 0) +
                     parseFloat(orderDetails.socanHN2_maThanhphamPBHH2 || 0) +
                     parseFloat(orderDetails.socanHN2_maThanhphamPBHH3 || 0) +
@@ -807,9 +753,7 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     parseFloat(orderDetails.socanHN2_maThanhphamPBHH5 || 0) +
                     parseFloat(orderDetails.socanHN2_maThanhphamPBHH6 || 0) +
                     parseFloat(orderDetails.socanHN2_maThanhphamPBHH7 || 0) +
-                    parseFloat(orderDetails.socanHN2_maThanhphamPBHH8 || 0) +
-                    parseFloat(orderDetails.socanHN2_maTaichePBHH || 0) +
-                    parseFloat(orderDetails.socanHN2_maPhePBHH || 0);
+                    parseFloat(orderDetails.socanHN2_maThanhphamPBHH8 || 0);
 
                 const tongSocanHatnhua3T =
                     parseFloat(orderDetails.socanHN3_maThanhphamPB1 || 0) +
@@ -820,8 +764,6 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     parseFloat(orderDetails.socanHN3_maThanhphamPB6 || 0) +
                     parseFloat(orderDetails.socanHN3_maThanhphamPB7 || 0) +
                     parseFloat(orderDetails.socanHN3_maThanhphamPB8 || 0) +
-                    parseFloat(orderDetails.socanHN3_maTaichePB || 0) +
-                    parseFloat(orderDetails.socanHN3_maPhePB || 0) +
                     parseFloat(orderDetails.socanHN3_maThanhphamPBHH1 || 0) +
                     parseFloat(orderDetails.socanHN3_maThanhphamPBHH2 || 0) +
                     parseFloat(orderDetails.socanHN3_maThanhphamPBHH3 || 0) +
@@ -829,9 +771,7 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     parseFloat(orderDetails.socanHN3_maThanhphamPBHH5 || 0) +
                     parseFloat(orderDetails.socanHN3_maThanhphamPBHH6 || 0) +
                     parseFloat(orderDetails.socanHN3_maThanhphamPBHH7 || 0) +
-                    parseFloat(orderDetails.socanHN3_maThanhphamPBHH8 || 0) +
-                    parseFloat(orderDetails.socanHN3_maTaichePBHH || 0) +
-                    parseFloat(orderDetails.socanHN3_maPhePBHH || 0);
+                    parseFloat(orderDetails.socanHN3_maThanhphamPBHH8 || 0);
 
                 const tongSocanHatnhua4T =
                     parseFloat(orderDetails.socanHN4_maThanhphamPB1 || 0) +
@@ -842,8 +782,6 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     parseFloat(orderDetails.socanHN4_maThanhphamPB6 || 0) +
                     parseFloat(orderDetails.socanHN4_maThanhphamPB7 || 0) +
                     parseFloat(orderDetails.socanHN4_maThanhphamPB8 || 0) +
-                    parseFloat(orderDetails.socanHN4_maTaichePB || 0) +
-                    parseFloat(orderDetails.socanHN4_maPhePB || 0) +
                     parseFloat(orderDetails.socanHN4_maThanhphamPBHH1 || 0) +
                     parseFloat(orderDetails.socanHN4_maThanhphamPBHH2 || 0) +
                     parseFloat(orderDetails.socanHN4_maThanhphamPBHH3 || 0) +
@@ -851,9 +789,7 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     parseFloat(orderDetails.socanHN4_maThanhphamPBHH5 || 0) +
                     parseFloat(orderDetails.socanHN4_maThanhphamPBHH6 || 0) +
                     parseFloat(orderDetails.socanHN4_maThanhphamPBHH7 || 0) +
-                    parseFloat(orderDetails.socanHN4_maThanhphamPBHH8 || 0) +
-                    parseFloat(orderDetails.socanHN4_maTaichePBHH || 0) +
-                    parseFloat(orderDetails.socanHN4_maPhePBHH || 0);
+                    parseFloat(orderDetails.socanHN4_maThanhphamPBHH8 || 0);
 
                 const tongSocanThanhpham1 =
                     parseFloat(orderDetails.socanHN1_maThanhphamPB1 || 0) +
@@ -909,12 +845,6 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     parseFloat(orderDetails.socanHN3_maTaichePB || 0) +
                     parseFloat(orderDetails.socanHN4_maTaichePB || 0);
 
-                const tongSocanPhe =
-                    parseFloat(orderDetails.socanHN1_maPhePB || 0) +
-                    parseFloat(orderDetails.socanHN2_maPhePB || 0) +
-                    parseFloat(orderDetails.socanHN3_maPhePB || 0) +
-                    parseFloat(orderDetails.socanHN4_maPhePB || 0);
-
                 const tongSocanThanhphamHH1 =
                     parseFloat(orderDetails.socanHN1_maThanhphamPBHH1 || 0) +
                     parseFloat(orderDetails.socanHN2_maThanhphamPBHH1 || 0) +
@@ -962,18 +892,6 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     parseFloat(orderDetails.socanHN2_maThanhphamPBHH8 || 0) +
                     parseFloat(orderDetails.socanHN3_maThanhphamPBHH8 || 0) +
                     parseFloat(orderDetails.socanHN4_maThanhphamPBHH8 || 0);
-
-                const tongSocanTaicheHH =
-                    parseFloat(orderDetails.socanHN1_maTaichePBHH || 0) +
-                    parseFloat(orderDetails.socanHN2_maTaichePBHH || 0) +
-                    parseFloat(orderDetails.socanHN3_maTaichePBHH || 0) +
-                    parseFloat(orderDetails.socanHN4_maTaichePBHH || 0);
-
-                const tongSocanPheHH =
-                    parseFloat(orderDetails.socanHN1_maPhePBHH || 0) +
-                    parseFloat(orderDetails.socanHN2_maPhePBHH || 0) +
-                    parseFloat(orderDetails.socanHN3_maPhePBHH || 0) +
-                    parseFloat(orderDetails.socanHN4_maPhePBHH || 0);
 
                 const tongSocanThanhphamT1 =
                     parseFloat(orderDetails.socanHN1_maThanhphamPB1 || 0) +
@@ -1055,26 +973,6 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     parseFloat(orderDetails.socanHN3_maThanhphamPBHH8 || 0) +
                     parseFloat(orderDetails.socanHN4_maThanhphamPBHH8 || 0);
 
-                const tongSocanTaicheT =
-                    parseFloat(orderDetails.socanHN1_maTaichePB || 0) +
-                    parseFloat(orderDetails.socanHN2_maTaichePB || 0) +
-                    parseFloat(orderDetails.socanHN3_maTaichePB || 0) +
-                    parseFloat(orderDetails.socanHN4_maTaichePB || 0) +
-                    parseFloat(orderDetails.socanHN1_maTaichePBHH || 0) +
-                    parseFloat(orderDetails.socanHN2_maTaichePBHH || 0) +
-                    parseFloat(orderDetails.socanHN3_maTaichePBHH || 0) +
-                    parseFloat(orderDetails.socanHN4_maTaichePBHH || 0);
-
-                const tongSocanPheT =
-                    parseFloat(orderDetails.socanHN1_maPhePB || 0) +
-                    parseFloat(orderDetails.socanHN2_maPhePB || 0) +
-                    parseFloat(orderDetails.socanHN3_maPhePB || 0) +
-                    parseFloat(orderDetails.socanHN4_maPhePB || 0) +
-                    parseFloat(orderDetails.socanHN1_maPhePBHH || 0) +
-                    parseFloat(orderDetails.socanHN2_maPhePBHH || 0) +
-                    parseFloat(orderDetails.socanHN3_maPhePBHH || 0) +
-                    parseFloat(orderDetails.socanHN4_maPhePBHH || 0);
-
                 const tongSocanPhanbo =
                     tongSocanHatnhua1 + tongSocanHatnhua2 + tongSocanHatnhua3 + tongSocanHatnhua4;
 
@@ -1127,16 +1025,6 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 orderDetails.socanHN3_maThanhphamPBT8 = socanHN3_maThanhphamPBT8;
                 orderDetails.socanHN4_maThanhphamPBT8 = socanHN4_maThanhphamPBT8;
 
-                orderDetails.socanHN1_maTaichePBT = socanHN1_maTaichePBT;
-                orderDetails.socanHN2_maTaichePBT = socanHN2_maTaichePBT;
-                orderDetails.socanHN3_maTaichePBT = socanHN3_maTaichePBT;
-                orderDetails.socanHN4_maTaichePBT = socanHN4_maTaichePBT;
-
-                orderDetails.socanHN1_maPhePBT = socanHN1_maPhePBT;
-                orderDetails.socanHN2_maPhePBT = socanHN2_maPhePBT;
-                orderDetails.socanHN3_maPhePBT = socanHN3_maPhePBT;
-                orderDetails.socanHN4_maPhePBT = socanHN4_maPhePBT;
-
                 orderDetails.tongSocanHatnhua1 = tongSocanHatnhua1;
                 orderDetails.tongSocanHatnhua2 = tongSocanHatnhua2;
                 orderDetails.tongSocanHatnhua3 = tongSocanHatnhua3;
@@ -1161,7 +1049,6 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 orderDetails.tongSocanThanhpham7 = tongSocanThanhpham7;
                 orderDetails.tongSocanThanhpham8 = tongSocanThanhpham8;
                 orderDetails.tongSocanTaiche = tongSocanTaiche;
-                orderDetails.tongSocanPhe = tongSocanPhe;
 
                 orderDetails.tongSocanThanhphamHH1 = tongSocanThanhphamHH1;
                 orderDetails.tongSocanThanhphamHH2 = tongSocanThanhphamHH2;
@@ -1171,8 +1058,6 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 orderDetails.tongSocanThanhphamHH6 = tongSocanThanhphamHH6;
                 orderDetails.tongSocanThanhphamHH7 = tongSocanThanhphamHH7;
                 orderDetails.tongSocanThanhphamHH8 = tongSocanThanhphamHH8;
-                orderDetails.tongSocanTaicheHH = tongSocanTaicheHH;
-                orderDetails.tongSocanPheHH = tongSocanPheHH;
 
                 orderDetails.tongSocanThanhphamT1 = tongSocanThanhphamT1;
                 orderDetails.tongSocanThanhphamT2 = tongSocanThanhphamT2;
@@ -1182,8 +1067,6 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 orderDetails.tongSocanThanhphamT6 = tongSocanThanhphamT6;
                 orderDetails.tongSocanThanhphamT7 = tongSocanThanhphamT7;
                 orderDetails.tongSocanThanhphamT8 = tongSocanThanhphamT8;
-                orderDetails.tongSocanTaicheT = tongSocanTaicheT;
-                orderDetails.tongSocanPheT = tongSocanPheT;
 
                 orderDetails.tongSocanPhanbo = tongSocanPhanbo;
 
@@ -1373,42 +1256,6 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('socanHN3_maThanhphamPBT8').textContent = replaceDotWithComma(orderDetails.socanHN3_maThanhphamPBT8);
                 document.getElementById('socanHN4_maThanhphamPBT8').textContent = replaceDotWithComma(orderDetails.socanHN4_maThanhphamPBT8);
 
-                document.getElementById('maTaichePB').textContent = orderDetails.maTaichePB;
-                document.getElementById('maTaichePB.1').textContent = orderDetails.maTaichePB;
-                document.getElementById('maTaichePB.2').textContent = orderDetails.maTaichePB;
-                document.getElementById('socanHN1_maTaichePB').textContent = formatWithCommas(orderDetails.socanHN1_maTaichePB);
-                document.getElementById('socanHN2_maTaichePB').textContent = formatWithCommas(orderDetails.socanHN2_maTaichePB);
-                document.getElementById('socanHN3_maTaichePB').textContent = formatWithCommas(orderDetails.socanHN3_maTaichePB);
-                document.getElementById('socanHN4_maTaichePB').textContent = formatWithCommas(orderDetails.socanHN4_maTaichePB);
-
-                document.getElementById('socanHN1_maTaichePBHH').textContent = formatWithCommas(orderDetails.socanHN1_maTaichePBHH);
-                document.getElementById('socanHN2_maTaichePBHH').textContent = formatWithCommas(orderDetails.socanHN2_maTaichePBHH);
-                document.getElementById('socanHN3_maTaichePBHH').textContent = formatWithCommas(orderDetails.socanHN3_maTaichePBHH);
-                document.getElementById('socanHN4_maTaichePBHH').textContent = formatWithCommas(orderDetails.socanHN4_maTaichePBHH);
-
-                document.getElementById('socanHN1_maTaichePBT').textContent = replaceDotWithComma(orderDetails.socanHN1_maTaichePBT);
-                document.getElementById('socanHN2_maTaichePBT').textContent = replaceDotWithComma(orderDetails.socanHN2_maTaichePBT);
-                document.getElementById('socanHN3_maTaichePBT').textContent = replaceDotWithComma(orderDetails.socanHN3_maTaichePBT);
-                document.getElementById('socanHN4_maTaichePBT').textContent = replaceDotWithComma(orderDetails.socanHN4_maTaichePBT);
-
-                document.getElementById('maPhePB').textContent = orderDetails.maPhePB;
-                document.getElementById('maPhePB.1').textContent = orderDetails.maPhePB;
-                document.getElementById('maPhePB.2').textContent = orderDetails.maPhePB;
-                document.getElementById('socanHN1_maPhePB').textContent = formatWithCommas(orderDetails.socanHN1_maPhePB);
-                document.getElementById('socanHN2_maPhePB').textContent = formatWithCommas(orderDetails.socanHN2_maPhePB);
-                document.getElementById('socanHN3_maPhePB').textContent = formatWithCommas(orderDetails.socanHN3_maPhePB);
-                document.getElementById('socanHN4_maPhePB').textContent = formatWithCommas(orderDetails.socanHN4_maPhePB);
-
-                document.getElementById('socanHN1_maPhePBHH').textContent = formatWithCommas(orderDetails.socanHN1_maPhePBHH);
-                document.getElementById('socanHN2_maPhePBHH').textContent = formatWithCommas(orderDetails.socanHN2_maPhePBHH);
-                document.getElementById('socanHN3_maPhePBHH').textContent = formatWithCommas(orderDetails.socanHN3_maPhePBHH);
-                document.getElementById('socanHN4_maPhePBHH').textContent = formatWithCommas(orderDetails.socanHN4_maPhePBHH);
-
-                document.getElementById('socanHN1_maPhePBT').textContent = replaceDotWithComma(orderDetails.socanHN1_maPhePBT);
-                document.getElementById('socanHN2_maPhePBT').textContent = replaceDotWithComma(orderDetails.socanHN2_maPhePBT);
-                document.getElementById('socanHN3_maPhePBT').textContent = replaceDotWithComma(orderDetails.socanHN3_maPhePBT);
-                document.getElementById('socanHN4_maPhePBT').textContent = replaceDotWithComma(orderDetails.socanHN4_maPhePBT);
-
                 document.getElementById('tongSocanHatnhua1').textContent = replaceDotWithComma(orderDetails.tongSocanHatnhua1);
                 document.getElementById('tongSocanHatnhua2').textContent = replaceDotWithComma(orderDetails.tongSocanHatnhua2);
                 document.getElementById('tongSocanHatnhua3').textContent = replaceDotWithComma(orderDetails.tongSocanHatnhua3);
@@ -1433,7 +1280,6 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('tongSocanThanhpham7').textContent = replaceDotWithComma(orderDetails.tongSocanThanhpham7);
                 document.getElementById('tongSocanThanhpham8').textContent = replaceDotWithComma(orderDetails.tongSocanThanhpham8);
                 document.getElementById('tongSocanTaiche').textContent = replaceDotWithComma(orderDetails.tongSocanTaiche);
-                document.getElementById('tongSocanPhe').textContent = replaceDotWithComma(orderDetails.tongSocanPhe);
 
                 document.getElementById('tongSocanThanhphamHH1').textContent = replaceDotWithComma(orderDetails.tongSocanThanhphamHH1);
                 document.getElementById('tongSocanThanhphamHH2').textContent = replaceDotWithComma(orderDetails.tongSocanThanhphamHH2);
@@ -1443,8 +1289,6 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('tongSocanThanhphamHH6').textContent = replaceDotWithComma(orderDetails.tongSocanThanhphamHH6);
                 document.getElementById('tongSocanThanhphamHH7').textContent = replaceDotWithComma(orderDetails.tongSocanThanhphamHH7);
                 document.getElementById('tongSocanThanhphamHH8').textContent = replaceDotWithComma(orderDetails.tongSocanThanhphamHH8);
-                document.getElementById('tongSocanTaicheHH').textContent = replaceDotWithComma(orderDetails.tongSocanTaicheHH);
-                document.getElementById('tongSocanPheHH').textContent = replaceDotWithComma(orderDetails.tongSocanPheHH);
 
                 document.getElementById('tongSocanThanhphamT1').textContent = replaceDotWithComma(orderDetails.tongSocanThanhphamT1);
                 document.getElementById('tongSocanThanhphamT2').textContent = replaceDotWithComma(orderDetails.tongSocanThanhphamT2);
@@ -1454,8 +1298,6 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('tongSocanThanhphamT6').textContent = replaceDotWithComma(orderDetails.tongSocanThanhphamT6);
                 document.getElementById('tongSocanThanhphamT7').textContent = replaceDotWithComma(orderDetails.tongSocanThanhphamT7);
                 document.getElementById('tongSocanThanhphamT8').textContent = replaceDotWithComma(orderDetails.tongSocanThanhphamT8);
-                document.getElementById('tongSocanTaicheT').textContent = replaceDotWithComma(orderDetails.tongSocanTaicheT);
-                document.getElementById('tongSocanPheT').textContent = replaceDotWithComma(orderDetails.tongSocanPheT);
 
                 document.getElementById('tongSocanPhanbo').textContent = replaceDotWithComma(orderDetails.tongSocanPhanbo);
 
@@ -1622,15 +1464,15 @@ function displayDetailData(orderItems) {
                 const chenhTytrongDisplay = chenhTytrong === 0 ? '' : chenhTytrong.toFixed(3);
                 const tyleChenhTytrongDisplay = tyleChenhTytrong === 0 ? '' : tyleChenhTytrong.toFixed(3);
                 tableRows += `
-    <tr class="bordered-table">
-        <td class="borderedcol-1">${rowData.ma}</td>
-        <td class="borderedcol-2">${formatWithCommas(rowData.trongluong)}</td>
-        <td class="borderedcol-3">${rowData.soluong}</td>
-        <td class="borderedcol-4">${formatWithCommas(rowData.tytrong)}</td>
-        <td class="borderedcol-5">${formatWithCommas(rowData.tytrongKH)}</td>
-        <td class="borderedcol-6">${formatWithCommas(chenhTytrongDisplay)}</td>
-        <td class="borderedcol-7">${formatWithCommas(tyleChenhTytrongDisplay)}</td>
-    </tr>
+<tr class="bordered-table">
+    <td class="borderedcol-1">${rowData.ma}</td>
+    <td class="borderedcol-2">${formatWithCommas(rowData.trongluong)}</td>
+    <td class="borderedcol-3">${rowData.soluong}</td>
+    <td class="borderedcol-4">${formatWithCommas(rowData.tytrong)}</td>
+    <td class="borderedcol-5">${formatWithCommas(rowData.tytrongKH)}</td>
+    <td class="borderedcol-6">${formatWithCommas(chenhTytrongDisplay)}</td>
+    <td class="borderedcol-7">${formatWithCommas(tyleChenhTytrongDisplay)}</td>
+</tr>
 `;
 
                 // Cộng dồn trọng lượng vào tổng
