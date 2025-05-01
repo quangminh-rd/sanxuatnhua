@@ -536,12 +536,12 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     parseFloat(orderDetails.socanHN2_maThanhphamPBHH2 || 0);
 
                 const socanHN3_maThanhphamPBT2 =
-                    parseFloat(orderDetails.socanHN3_maThanhphamPB3 || 0) +
-                    parseFloat(orderDetails.socanHN3_maThanhphamPBHH3 || 0);
+                    parseFloat(orderDetails.socanHN3_maThanhphamPB2 || 0) +
+                    parseFloat(orderDetails.socanHN3_maThanhphamPBHH2 || 0);
 
                 const socanHN4_maThanhphamPBT2 =
-                    parseFloat(orderDetails.socanHN4_maThanhphamPB4 || 0) +
-                    parseFloat(orderDetails.socanHN4_maThanhphamPBHH4 || 0);
+                    parseFloat(orderDetails.socanHN4_maThanhphamPB2 || 0) +
+                    parseFloat(orderDetails.socanHN4_maThanhphamPBHH2 || 0);
 
                 const socanHN1_maThanhphamPBT3 =
                     parseFloat(orderDetails.socanHN1_maThanhphamPB3 || 0) +
