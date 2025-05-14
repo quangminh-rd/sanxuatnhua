@@ -839,12 +839,6 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     parseFloat(orderDetails.socanHN3_maThanhphamPB8 || 0) +
                     parseFloat(orderDetails.socanHN4_maThanhphamPB8 || 0);
 
-                const tongSocanTaiche =
-                    parseFloat(orderDetails.socanHN1_maTaichePB || 0) +
-                    parseFloat(orderDetails.socanHN2_maTaichePB || 0) +
-                    parseFloat(orderDetails.socanHN3_maTaichePB || 0) +
-                    parseFloat(orderDetails.socanHN4_maTaichePB || 0);
-
                 const tongSocanThanhphamHH1 =
                     parseFloat(orderDetails.socanHN1_maThanhphamPBHH1 || 0) +
                     parseFloat(orderDetails.socanHN2_maThanhphamPBHH1 || 0) +
@@ -983,6 +977,9 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 const tongSocanPhanboT =
                     tongSocanPhanbo + tongSocanPhanboHH
 
+                const tongSocanTaiche =
+                    parseFloat(orderDetails.tongTrongluongXuat || 0) - tongSocanPhanboT
+
                 // Cập nhật vào orderDetails
 
                 orderDetails.socanHN1_maThanhphamPBT1 = socanHN1_maThanhphamPBT1;
@@ -1048,7 +1045,6 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 orderDetails.tongSocanThanhpham6 = tongSocanThanhpham6;
                 orderDetails.tongSocanThanhpham7 = tongSocanThanhpham7;
                 orderDetails.tongSocanThanhpham8 = tongSocanThanhpham8;
-                orderDetails.tongSocanTaiche = tongSocanTaiche;
 
                 orderDetails.tongSocanThanhphamHH1 = tongSocanThanhphamHH1;
                 orderDetails.tongSocanThanhphamHH2 = tongSocanThanhphamHH2;
@@ -1073,6 +1069,8 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 orderDetails.tongSocanPhanboHH = tongSocanPhanboHH;
 
                 orderDetails.tongSocanPhanboT = tongSocanPhanboT;
+
+                orderDetails.tongSocanTaiche = tongSocanTaiche;
 
                 // Cập nhật nội dung HTML
                 document.getElementById('maLenhsanxuat').textContent = orderDetails.maLenhsanxuat;
@@ -1279,7 +1277,6 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('tongSocanThanhpham6').textContent = replaceDotWithComma(orderDetails.tongSocanThanhpham6);
                 document.getElementById('tongSocanThanhpham7').textContent = replaceDotWithComma(orderDetails.tongSocanThanhpham7);
                 document.getElementById('tongSocanThanhpham8').textContent = replaceDotWithComma(orderDetails.tongSocanThanhpham8);
-                document.getElementById('tongSocanTaiche').textContent = replaceDotWithComma(orderDetails.tongSocanTaiche);
 
                 document.getElementById('tongSocanThanhphamHH1').textContent = replaceDotWithComma(orderDetails.tongSocanThanhphamHH1);
                 document.getElementById('tongSocanThanhphamHH2').textContent = replaceDotWithComma(orderDetails.tongSocanThanhphamHH2);
@@ -1304,6 +1301,8 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('tongSocanPhanboHH').textContent = replaceDotWithComma(orderDetails.tongSocanPhanboHH);
 
                 document.getElementById('tongSocanPhanboT').textContent = replaceDotWithComma(orderDetails.tongSocanPhanboT);
+
+                document.getElementById('tongSocanTaiche').textContent = replaceDotWithComma(orderDetails.tongSocanTaiche);
 
 
                 // Gọi hàm ẩn các dòng trống
