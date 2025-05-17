@@ -1426,7 +1426,6 @@ function displayDetailData(orderItems) {
             { ma: item.maThanhpham7, trongluong: item.trongluongThanhpham7, soluong: item.soluongThanhpham7, tytrong: item.tytrongttThanhpham7, tytrongKH: item.tytrongKH7 },
             { ma: item.maThanhpham8, trongluong: item.trongluongThanhpham8, soluong: item.soluongThanhpham8, tytrong: item.tytrongttThanhpham8, tytrongKH: item.tytrongKH8 },
             { ma: item.maHatnhuataiche, trongluong: item.trongluongHatnhuataiche, soluong: '', tytrong: '', tytrongKH: '' },
-            { ma: item.maHatnhuaphe, trongluong: item.trongluongHatnhuaphe, soluong: '', tytrong: '', tytrongKH: '' },
         ];
 
         let tableRows = `
@@ -1525,10 +1524,8 @@ function extractDetailDataFromRow(row) {
         soluongThanhpham8: row[34],
         trongluongThanhpham8: row[35],
         tytrongttThanhpham8: row[36],
-        maHatnhuataiche: row[37],
-        trongluongHatnhuataiche: row[38],
-        maHatnhuaphe: row[39],
-        trongluongHatnhuaphe: row[40],
+        maHatnhuataiche: 'Tái chế',
+        trongluongHatnhuataiche: row[37]
     };
 }
 
