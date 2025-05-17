@@ -46,6 +46,10 @@ p {
     font-size: 14px;
 }
 
+p.p2 {
+    padding-left: 10px;
+}
+
 img {
     display: block;
     max-width: 100%;
@@ -286,6 +290,10 @@ img {
     p {
         margin: 2px 0;
         font-size: 8px;
+    }
+
+    p.p2 {
+        padding-left: 6px;
     }
 
     img {

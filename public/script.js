@@ -1294,6 +1294,15 @@ async function findRowInSheet(maLenhsanxuatURI) {
 
                 document.getElementById('tongSocanTaiche').textContent = replaceDotWithComma(orderDetails.tongSocanTaiche);
 
+                document.getElementById('maHN1_Taiche').textContent = formatWithCommas(orderDetails.maHN1_Taiche);
+                document.getElementById('maHN2_Taiche').textContent = formatWithCommas(orderDetails.maHN2_Taiche);
+                document.getElementById('maHN3_Taiche').textContent = formatWithCommas(orderDetails.maHN3_Taiche);
+                document.getElementById('maHN4_Taiche').textContent = formatWithCommas(orderDetails.maHN4_Taiche);
+
+                document.getElementById('socanHN1_Taiche').textContent = formatWithCommas(orderDetails.socanHN1_Taiche);
+                document.getElementById('socanHN2_Taiche').textContent = formatWithCommas(orderDetails.socanHN2_Taiche);
+                document.getElementById('socanHN3_Taiche').textContent = formatWithCommas(orderDetails.socanHN3_Taiche);
+                document.getElementById('socanHN4_Taiche').textContent = formatWithCommas(orderDetails.socanHN4_Taiche);
 
                 // Gọi hàm ẩn các dòng trống
                 hideEmptyRows();
