@@ -492,6 +492,8 @@ async function findRowInSheet(maLenhsanxuatURI) {
                     socanHN3_maThanhphamPBHH8: row[100] || '', // Cột CW
                     socanHN4_maThanhphamPBHH8: row[101] || '', // Cột CX
 
+                    tongTrongluongPhe: row[103] || '', // Cột CZ
+
                 };
 
                 // Tìm tên hạt nhựa
@@ -970,6 +972,12 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 const tongSocanTaiche =
                     parseFloat(orderDetails.tongTrongluongXuat || 0) - tongSocanPhanboT
 
+                const tongSocanHaohut =
+                    parseFloat(orderDetails.tongTrongluongXuat || 0) - parseFloat(orderDetails.tongTrongluongNhap || 0) - parseFloat(orderDetails.tongTrongluongPhe || 0)
+
+                const tongTrongluongHaohut =
+                    parseFloat(orderDetails.tongTrongluongXuat || 0) - parseFloat(orderDetails.tongTrongluongNhap || 0)
+
                 // Cập nhật vào orderDetails
 
                 orderDetails.socanHN1_maThanhphamPBT1 = socanHN1_maThanhphamPBT1;
@@ -1061,6 +1069,10 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 orderDetails.tongSocanPhanboT = tongSocanPhanboT;
 
                 orderDetails.tongSocanTaiche = tongSocanTaiche;
+
+                orderDetails.tongSocanHaohut = tongSocanHaohut;
+
+                orderDetails.tongTrongluongHaohut = tongTrongluongHaohut;
 
                 // Cập nhật nội dung HTML
                 document.getElementById('maLenhsanxuat').textContent = orderDetails.maLenhsanxuat;
@@ -1295,10 +1307,15 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('tongSocanTaiche').textContent = replaceDotWithComma(orderDetails.tongSocanTaiche);
                 document.getElementById('tongSocanTaiche2').textContent = replaceDotWithComma(orderDetails.tongSocanTaiche);
 
+                document.getElementById('tongSocanHaohut').textContent = replaceDotWithComma(orderDetails.tongSocanHaohut);
+                document.getElementById('tongTrongluongHaohut').textContent = replaceDotWithComma(orderDetails.tongTrongluongHaohut);
+
                 document.getElementById('socanHN1_Taiche').textContent = formatWithCommas(orderDetails.socanHN1_Taiche);
                 document.getElementById('socanHN2_Taiche').textContent = formatWithCommas(orderDetails.socanHN2_Taiche);
                 document.getElementById('socanHN3_Taiche').textContent = formatWithCommas(orderDetails.socanHN3_Taiche);
                 document.getElementById('socanHN4_Taiche').textContent = formatWithCommas(orderDetails.socanHN4_Taiche);
+
+                document.getElementById('tongTrongluongPhe').textContent = formatWithCommas(orderDetails.tongTrongluongPhe);
 
                 // Gọi hàm ẩn các dòng trống
                 hideEmptyRows();
@@ -1431,6 +1448,7 @@ function displayDetailData(orderItems) {
             { ma: item.maThanhpham7, trongluong: item.trongluongThanhpham7, soluong: item.soluongThanhpham7, tytrong: item.tytrongttThanhpham7, tytrongKH: item.tytrongKH7 },
             { ma: item.maThanhpham8, trongluong: item.trongluongThanhpham8, soluong: item.soluongThanhpham8, tytrong: item.tytrongttThanhpham8, tytrongKH: item.tytrongKH8 },
             { ma: item.maHatnhuataiche, trongluong: item.trongluongHatnhuataiche, soluong: '', tytrong: '', tytrongKH: '' },
+            { ma: item.maHatnhuaphe, trongluong: item.trongluongHatnhuaphe, soluong: '', tytrong: '', tytrongKH: '' },
         ];
 
         let tableRows = `
@@ -1530,7 +1548,9 @@ function extractDetailDataFromRow(row) {
         trongluongThanhpham8: row[35],
         tytrongttThanhpham8: row[36],
         maHatnhuataiche: 'Tái chế',
-        trongluongHatnhuataiche: row[37]
+        trongluongHatnhuataiche: row[37],
+        maHatnhuaphe: 'Phế',
+        trongluongHatnhuaphe: row[38]
     };
 }
 
