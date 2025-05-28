@@ -3,6 +3,7 @@ var DocTienBangChu = function () {
     this.Tien = new Array("", " nghìn", " triệu", " tỷ", " nghìn tỷ", " triệu tỷ");
 };
 
+
 DocTienBangChu.prototype.docSo3ChuSo = function (baso) {
     var tram;
     var chuc;
@@ -1553,7 +1554,6 @@ function extractDetailDataFromRow(row) {
         trongluongHatnhuaphe: row[38]
     };
 }
-
 
 // Hàm cập nhật nội dung DOM
 function updateElement(elementId, value) {
