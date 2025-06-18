@@ -1287,6 +1287,7 @@ async function findRowInSheet(maLenhsanxuatURI) {
                 document.getElementById('tongSocanThanhphamT8').textContent = replaceDotWithComma(orderDetails.tongSocanThanhphamT8);
 
                 document.getElementById('tongSocanPhanbo').textContent = replaceDotWithComma(orderDetails.tongSocanPhanbo);
+                document.getElementById('tongSocanPhanbo2').textContent = replaceDotWithComma(orderDetails.tongSocanPhanbo);
 
                 document.getElementById('tongSocanPhanboHH').textContent = replaceDotWithComma(orderDetails.tongSocanPhanboHH);
 

@@ -47,7 +47,7 @@
         }
 
         p.p2 {
-            padding-left: 10px;
+            padding-left: 16px;
         }
 
         img {
@@ -130,7 +130,7 @@
         }
 
         .slicecol-1 {
-            width: 18%;
+            width: 16%;
             text-align: left;
         }
 
@@ -155,7 +155,7 @@
         }
 
         .slicecol-6 {
-            width: 6%;
+            width: 8%;
             text-align: center;
         }
 
@@ -298,7 +298,7 @@
             }
 
             p.p2 {
-                padding-left: 6px;
+                padding-left: 8px;
             }
 
             img {
@@ -381,7 +381,7 @@
             }
 
             .slicecol-1 {
-                width: 18%;
+                width: 16%;
                 text-align: left;
             }
 
@@ -406,7 +406,7 @@
             }
 
             .slicecol-6 {
-                width: 6%;
+                width: 8%;
                 text-align: center;
             }
 
