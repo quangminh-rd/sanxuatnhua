@@ -1455,8 +1455,8 @@ function displayDetailData(orderItems) {
                 const chenhTytrong = parseFloat(rowData.tytrong || 0) - parseFloat(rowData.tytrongKH || 0); // Tính chênh lệch tỷ trọng
                 const tyleChenhTytrong = (parseFloat(rowData.tytrong || 0) - parseFloat(rowData.tytrongKH || 0)) / parseFloat(rowData.tytrongKH || 0) * 100 || 0; // Tính tỷ lệ chênh lệch tỷ trọng
                 // Kiểm tra nếu chênh lệch bằng 0 thì trả về ''
-                const chenhTytrongDisplay = chenhTytrong === 0 ? '' : chenhTytrong.toFixed(3);
-                const tyleChenhTytrongDisplay = tyleChenhTytrong === 0 ? '' : tyleChenhTytrong.toFixed(3);
+                const chenhTytrongDisplay = chenhTytrong === 0 ? '0' : chenhTytrong.toFixed(3);
+                const tyleChenhTytrongDisplay = tyleChenhTytrong === 0 ? '0' : tyleChenhTytrong.toFixed(3);
                 tableRows += `
 <tr class="bordered-table">
     <td class="borderedcol-1">${rowData.ma}</td>
